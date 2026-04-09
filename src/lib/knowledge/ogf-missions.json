@@ -1,0 +1,78 @@
+{
+  "$schema": "./schemas/ogf-missions.schema.json",
+  "_description": "Maps record types to OGF mission pages. Slugs are placeholders — update as OGF content is published.",
+  "missions": [
+    {
+      "recordType": "census",
+      "title": "Reading the Census Like a Pro",
+      "level": "101",
+      "slug": "mission-census-basics"
+    },
+    {
+      "recordType": "birth_record",
+      "title": "Finding Birth Records State by State",
+      "level": "201",
+      "slug": "mission-birth-records"
+    },
+    {
+      "recordType": "death_record",
+      "title": "What Death Records Reveal",
+      "level": "201",
+      "slug": "mission-death-records"
+    },
+    {
+      "recordType": "marriage_record",
+      "title": "Tracking Down Marriage Records",
+      "level": "201",
+      "slug": "mission-marriage-records"
+    },
+    {
+      "recordType": "military",
+      "title": "Military Records Field Guide",
+      "level": "201",
+      "slug": "mission-military-records"
+    },
+    {
+      "recordType": "immigration",
+      "title": "Immigration Records: Following the Journey",
+      "level": "201",
+      "slug": "mission-immigration-records"
+    },
+    {
+      "recordType": "naturalization",
+      "title": "Naturalization Papers Decoded",
+      "level": "301",
+      "slug": "mission-naturalization"
+    },
+    {
+      "recordType": "land_deed",
+      "title": "Land Records and Property Deeds",
+      "level": "301",
+      "slug": "mission-land-records"
+    },
+    {
+      "recordType": "probate",
+      "title": "Probate Records: Wills, Estates & Guardianships",
+      "level": "301",
+      "slug": "mission-probate-records"
+    },
+    {
+      "recordType": "newspaper",
+      "title": "Mining Historical Newspapers",
+      "level": "201",
+      "slug": "mission-newspapers"
+    },
+    {
+      "recordType": "church_record",
+      "title": "Church and Parish Records",
+      "level": "301",
+      "slug": "mission-church-records"
+    },
+    {
+      "recordType": "cemetery",
+      "title": "Cemetery Research Basics",
+      "level": "101",
+      "slug": "mission-cemetery-research"
+    }
+  ]
+}

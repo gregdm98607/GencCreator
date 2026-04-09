@@ -1,0 +1,124 @@
+{
+  "$schema": "./schemas/research-strategies.schema.json",
+  "_description": "Maps research goals to prioritized record type sequences. Order matters — first records are highest priority for that goal.",
+  "strategies": [
+    {
+      "goal": "find_parents",
+      "prioritizedRecords": [
+        "birth_record",
+        "census",
+        "marriage_record",
+        "church_record",
+        "probate",
+        "death_record",
+        "cemetery",
+        "newspaper",
+        "immigration",
+        "naturalization"
+      ],
+      "description": "Finding parents requires records that explicitly name them. Birth records and census returns (especially 1880+) are the most direct sources."
+    },
+    {
+      "goal": "find_children",
+      "prioritizedRecords": [
+        "census",
+        "birth_record",
+        "probate",
+        "church_record",
+        "newspaper",
+        "cemetery",
+        "school_record",
+        "city_directory"
+      ],
+      "description": "Census records list household members. Probate records and obituaries often enumerate children. Church baptism records name parents."
+    },
+    {
+      "goal": "find_spouse",
+      "prioritizedRecords": [
+        "marriage_record",
+        "census",
+        "church_record",
+        "newspaper",
+        "death_record",
+        "probate",
+        "cemetery"
+      ],
+      "description": "Marriage records are the primary source. Census records show household composition. Death records and obituaries often name spouses."
+    },
+    {
+      "goal": "find_siblings",
+      "prioritizedRecords": [
+        "census",
+        "birth_record",
+        "probate",
+        "church_record",
+        "newspaper",
+        "cemetery",
+        "school_record"
+      ],
+      "description": "Census records listing entire households are the best starting point. Probate records may name all heirs. Obituaries often list surviving siblings."
+    },
+    {
+      "goal": "confirm_identity",
+      "prioritizedRecords": [
+        "census",
+        "birth_record",
+        "death_record",
+        "marriage_record",
+        "military",
+        "naturalization",
+        "city_directory",
+        "newspaper",
+        "tax_record"
+      ],
+      "description": "Confirming identity requires multiple independent sources placing the same person in the same time and place. Cross-reference census, vital records, and directory listings."
+    },
+    {
+      "goal": "general_exploration",
+      "prioritizedRecords": [
+        "census",
+        "birth_record",
+        "death_record",
+        "marriage_record",
+        "military",
+        "immigration",
+        "newspaper",
+        "probate",
+        "cemetery",
+        "church_record",
+        "land_deed",
+        "city_directory",
+        "naturalization",
+        "tax_record",
+        "school_record"
+      ],
+      "description": "General exploration starts with the most information-rich records (census, vital records) and expands outward to fill gaps."
+    },
+    {
+      "goal": "immigration_origin",
+      "prioritizedRecords": [
+        "immigration",
+        "naturalization",
+        "census",
+        "church_record",
+        "newspaper",
+        "military",
+        "death_record",
+        "cemetery"
+      ],
+      "description": "Immigration and naturalization records may name the town of origin. Census records (1900+) ask year of immigration. Church records may connect to a home parish."
+    },
+    {
+      "goal": "military_service",
+      "prioritizedRecords": [
+        "military",
+        "newspaper",
+        "census",
+        "cemetery",
+        "probate",
+        "death_record"
+      ],
+      "description": "Start with service records and pension files. Newspaper coverage of veterans is common. Census records (1910, 1930, 1940) include veteran status questions."
+    }
+  ]
+}

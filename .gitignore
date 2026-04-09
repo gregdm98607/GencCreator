@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# VS Code
+.vscode/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Planning files (session-specific, not committed)
+task_plan.md
+findings.md
+progress.md
+nextprompt.md

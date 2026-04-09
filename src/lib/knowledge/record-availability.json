@@ -1,0 +1,112 @@
+{
+  "$schema": "./schemas/record-availability.schema.json",
+  "_description": "Maps country + time period → available record types. MVP: US only (1790-1950).",
+  "_backlog": ["UK", "Canada", "Ireland", "Germany"],
+  "records": [
+    {
+      "recordType": "census",
+      "country": "US",
+      "startYear": 1790,
+      "endYear": 1950,
+      "notes": "Federal census every 10 years. 1890 census largely destroyed by fire. State censuses also exist for some states."
+    },
+    {
+      "recordType": "birth_record",
+      "country": "US",
+      "startYear": 1850,
+      "endYear": 1950,
+      "notes": "Vital registration varies by state. Most states began mandatory registration between 1880-1920. Earlier records may exist in church or county records."
+    },
+    {
+      "recordType": "death_record",
+      "country": "US",
+      "startYear": 1850,
+      "endYear": 1950,
+      "notes": "Similar to birth records — state-level registration began 1880-1920. Death certificates often include parents' names and birthplaces."
+    },
+    {
+      "recordType": "marriage_record",
+      "country": "US",
+      "startYear": 1800,
+      "endYear": 1950,
+      "notes": "County-level marriage licenses and certificates. Some states have statewide indexes. Church records may predate civil records."
+    },
+    {
+      "recordType": "military",
+      "country": "US",
+      "startYear": 1775,
+      "endYear": 1950,
+      "notes": "Revolutionary War (1775-1783), War of 1812, Mexican-American War (1846-1848), Civil War (1861-1865), Spanish-American War (1898), WWI (1917-1918), WWII (1941-1945). Service records, pension files, draft registrations."
+    },
+    {
+      "recordType": "immigration",
+      "country": "US",
+      "startYear": 1820,
+      "endYear": 1950,
+      "notes": "Passenger arrival lists (ship manifests) from 1820. Castle Garden (1855-1890), Ellis Island (1892-1954). Earlier arrivals may appear in colonial records."
+    },
+    {
+      "recordType": "naturalization",
+      "country": "US",
+      "startYear": 1790,
+      "endYear": 1950,
+      "notes": "Filed in any federal, state, or local court. Post-1906 records are standardized and more detailed (include birthplace, arrival info). Pre-1906 records vary greatly."
+    },
+    {
+      "recordType": "land_deed",
+      "country": "US",
+      "startYear": 1790,
+      "endYear": 1950,
+      "notes": "County recorder deeds, federal land patents (General Land Office). Homestead Act records from 1862. Land records can establish residence and family connections."
+    },
+    {
+      "recordType": "probate",
+      "country": "US",
+      "startYear": 1790,
+      "endYear": 1950,
+      "notes": "Wills, estate inventories, guardianship records filed at county level. Often name family members and reveal economic status."
+    },
+    {
+      "recordType": "newspaper",
+      "country": "US",
+      "startYear": 1800,
+      "endYear": 1950,
+      "notes": "Obituaries, marriage announcements, legal notices, local news. Coverage increases dramatically after 1850. Digitized collections growing rapidly."
+    },
+    {
+      "recordType": "church_record",
+      "country": "US",
+      "startYear": 1790,
+      "endYear": 1950,
+      "notes": "Baptism, marriage, burial records. May predate civil vital records. Availability depends on denomination and congregation survival. Catholic diocesan archives often centralized."
+    },
+    {
+      "recordType": "city_directory",
+      "country": "US",
+      "startYear": 1800,
+      "endYear": 1950,
+      "notes": "Annual directories listing residents, occupations, and addresses. Excellent for tracking urban ancestors between census years. Coverage best for cities and larger towns."
+    },
+    {
+      "recordType": "cemetery",
+      "country": "US",
+      "startYear": 1790,
+      "endYear": 1950,
+      "notes": "Headstone inscriptions and sexton records. FindAGrave and BillionGraves have digitized millions of markers. May include birth/death dates, family relationships."
+    },
+    {
+      "recordType": "tax_record",
+      "country": "US",
+      "startYear": 1790,
+      "endYear": 1950,
+      "notes": "Property tax rolls, personal property tax, federal direct tax (1798, 1813-1816). Useful for tracking residence and economic status between census years."
+    },
+    {
+      "recordType": "school_record",
+      "country": "US",
+      "startYear": 1850,
+      "endYear": 1950,
+      "notes": "School censuses, enrollment records, yearbooks. Availability varies by district. Some states conducted school censuses that list all children in a household."
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "$schema": "./schemas/database-directory.schema.json",
+  "_description": "Maps record types to databases with URLs and affiliate info. Affiliate IDs are placeholders (TBD) until programs are approved.",
+  "databases": [
+    {
+      "id": "ancestry_census",
+      "name": "Ancestry — U.S. Federal Census",
+      "baseUrl": "https://www.ancestry.com/search/categories/35/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["census"]
+    },
+    {
+      "id": "familysearch_census",
+      "name": "FamilySearch — U.S. Census",
+      "baseUrl": "https://www.familysearch.org/search/collection/list/?cat=census",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["census"]
+    },
+    {
+      "id": "ancestry_vital",
+      "name": "Ancestry — Vital Records",
+      "baseUrl": "https://www.ancestry.com/search/categories/34/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["birth_record", "death_record", "marriage_record"]
+    },
+    {
+      "id": "familysearch_vital",
+      "name": "FamilySearch — Vital Records",
+      "baseUrl": "https://www.familysearch.org/search/collection/list/?cat=vital",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["birth_record", "death_record", "marriage_record"]
+    },
+    {
+      "id": "fold3_military",
+      "name": "Fold3 — Military Records",
+      "baseUrl": "https://www.fold3.com/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["military"]
+    },
+    {
+      "id": "ancestry_military",
+      "name": "Ancestry — Military Records",
+      "baseUrl": "https://www.ancestry.com/search/categories/39/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["military"]
+    },
+    {
+      "id": "familysearch_military",
+      "name": "FamilySearch — Military Records",
+      "baseUrl": "https://www.familysearch.org/search/collection/list/?cat=military",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["military"]
+    },
+    {
+      "id": "ancestry_immigration",
+      "name": "Ancestry — Immigration & Emigration",
+      "baseUrl": "https://www.ancestry.com/search/categories/40/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["immigration", "naturalization"]
+    },
+    {
+      "id": "familysearch_immigration",
+      "name": "FamilySearch — Immigration & Naturalization",
+      "baseUrl": "https://www.familysearch.org/search/collection/list/?cat=immigration",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["immigration", "naturalization"]
+    },
+    {
+      "id": "ellisisland",
+      "name": "Statue of Liberty — Ellis Island Passenger Search",
+      "baseUrl": "https://heritage.statueofliberty.org/",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["immigration"]
+    },
+    {
+      "id": "newspapers_com",
+      "name": "Newspapers.com",
+      "baseUrl": "https://www.newspapers.com/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["newspaper"]
+    },
+    {
+      "id": "chronicling_america",
+      "name": "Chronicling America (Library of Congress)",
+      "baseUrl": "https://chroniclingamerica.loc.gov/",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["newspaper"]
+    },
+    {
+      "id": "blm_glo",
+      "name": "Bureau of Land Management — General Land Office Records",
+      "baseUrl": "https://glorecords.blm.gov/",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["land_deed"]
+    },
+    {
+      "id": "ancestry_land",
+      "name": "Ancestry — Land Records",
+      "baseUrl": "https://www.ancestry.com/search/categories/36/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["land_deed"]
+    },
+    {
+      "id": "familysearch_probate",
+      "name": "FamilySearch — Probate Records",
+      "baseUrl": "https://www.familysearch.org/search/collection/list/?cat=probate",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["probate"]
+    },
+    {
+      "id": "ancestry_probate",
+      "name": "Ancestry — Wills & Probate",
+      "baseUrl": "https://www.ancestry.com/search/categories/34/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["probate"]
+    },
+    {
+      "id": "findagrave",
+      "name": "Find a Grave",
+      "baseUrl": "https://www.findagrave.com/",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["cemetery"]
+    },
+    {
+      "id": "billiongraves",
+      "name": "BillionGraves",
+      "baseUrl": "https://billiongraves.com/",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["cemetery"]
+    },
+    {
+      "id": "familysearch_church",
+      "name": "FamilySearch — Church Records",
+      "baseUrl": "https://www.familysearch.org/search/collection/list/?cat=church",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["church_record"]
+    },
+    {
+      "id": "ancestry_directories",
+      "name": "Ancestry — City Directories",
+      "baseUrl": "https://www.ancestry.com/search/categories/36/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["city_directory"]
+    },
+    {
+      "id": "familysearch_tax",
+      "name": "FamilySearch — Tax Records",
+      "baseUrl": "https://www.familysearch.org/search/collection/list/?cat=tax",
+      "affiliateId": "",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "free",
+      "recordTypes": ["tax_record"]
+    },
+    {
+      "id": "ancestry_schools",
+      "name": "Ancestry — School Records",
+      "baseUrl": "https://www.ancestry.com/search/categories/36/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["school_record"]
+    },
+    {
+      "id": "myheritage",
+      "name": "MyHeritage",
+      "baseUrl": "https://www.myheritage.com/research",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["census", "birth_record", "death_record", "marriage_record", "military", "immigration"]
+    },
+    {
+      "id": "findmypast",
+      "name": "Findmypast",
+      "baseUrl": "https://www.findmypast.com/",
+      "affiliateId": "TBD",
+      "utmSource": "gencreator",
+      "utmMedium": "research-plan",
+      "accessModel": "subscription",
+      "recordTypes": ["census", "birth_record", "death_record", "marriage_record", "military", "immigration"]
+    }
+  ]
+}
