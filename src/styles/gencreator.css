@@ -1,0 +1,569 @@
+/*
+ * GenCreator Styles
+ *
+ * Uses OGF's "Archival Warmth" design tokens (CSS custom properties).
+ * When integrated into OGF, these variables come from global.css.
+ * For standalone dev, fallback values are provided.
+ */
+
+/* --- Design Tokens (fallbacks for standalone dev) --- */
+:root {
+  --gc-brown: var(--archive-brown, #5B3A29);
+  --gc-crimson: var(--deep-crimson, #7A2E3A);
+  --gc-gold: var(--parchment-gold, #C19A6B);
+  --gc-linen: var(--old-linen, #F5EDE0);
+  --gc-linen-light: var(--old-linen-light, #FAF7F2);
+  --gc-body: var(--body-text, #2D2D2D);
+  --gc-muted: var(--muted-text, #6B6B6B);
+  --gc-white: #FFFFFF;
+  --gc-green: #2D6A4F;
+  --gc-green-light: #D8F3DC;
+  --gc-amber: #B8860B;
+  --gc-amber-light: #FFF3CD;
+  --gc-red-light: #F8D7DA;
+  --gc-font-body: Calibri, 'Segoe UI', system-ui, sans-serif;
+  --gc-font-heading: 'Lora', Georgia, serif;
+  --gc-radius: 8px;
+  --gc-shadow: 0 2px 8px rgba(91, 58, 41, 0.1);
+}
+
+/* --- Container --- */
+.gencreator {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: var(--gc-font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--gc-body);
+}
+
+/* --- Form Section --- */
+.gc-form {
+  background: var(--gc-white);
+  border: 1px solid var(--gc-gold);
+  border-radius: var(--gc-radius);
+  padding: 2rem;
+  box-shadow: var(--gc-shadow);
+}
+
+.gc-form h2 {
+  font-family: var(--gc-font-heading);
+  color: var(--gc-brown);
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+}
+
+.gc-form-intro {
+  color: var(--gc-muted);
+  margin: 0 0 2rem;
+}
+
+.gc-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+}
+
+.gc-fieldset legend {
+  font-family: var(--gc-font-heading);
+  font-weight: 600;
+  color: var(--gc-brown);
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+/* --- Form Fields --- */
+.gc-field {
+  margin-bottom: 1.25rem;
+}
+
+.gc-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--gc-brown);
+  font-size: 1rem;
+}
+
+.gc-field .gc-hint {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--gc-muted);
+  margin-bottom: 0.35rem;
+}
+
+.gc-field input[type="text"],
+.gc-field select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--gc-gold);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--gc-font-body);
+  background: var(--gc-linen-light);
+  color: var(--gc-body);
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.gc-field input[type="text"]:focus,
+.gc-field select:focus {
+  outline: 2px solid var(--gc-crimson);
+  outline-offset: 2px;
+  border-color: var(--gc-crimson);
+}
+
+.gc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .gc-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Checkboxes & Radios --- */
+.gc-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.gc-checkbox-item,
+.gc-radio-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.gc-checkbox-item:hover,
+.gc-radio-item:hover {
+  background: var(--gc-linen);
+}
+
+.gc-checkbox-item input[type="checkbox"],
+.gc-radio-item input[type="radio"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--gc-crimson);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.gc-checkbox-item label,
+.gc-radio-item label {
+  cursor: pointer;
+  font-weight: normal;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.gc-radio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.5rem;
+}
+
+/* --- Submit Button --- */
+.gc-submit {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 2rem;
+  background: var(--gc-crimson);
+  color: var(--gc-white);
+  border: none;
+  border-radius: var(--gc-radius);
+  font-family: var(--gc-font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 1rem;
+}
+
+.gc-submit:hover {
+  background: #5e1f2b;
+}
+
+.gc-submit:active {
+  transform: scale(0.98);
+}
+
+.gc-submit:focus-visible {
+  outline: 3px solid var(--gc-gold);
+  outline-offset: 2px;
+}
+
+/* --- Research Plan Output --- */
+.gc-plan {
+  animation: gc-fadeIn 0.3s ease-out;
+}
+
+@keyframes gc-fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gc-plan-header {
+  background: var(--gc-linen);
+  border: 1px solid var(--gc-gold);
+  border-radius: var(--gc-radius);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.gc-plan-header h2 {
+  font-family: var(--gc-font-heading);
+  color: var(--gc-brown);
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.gc-plan-meta {
+  color: var(--gc-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.gc-plan-meta span {
+  margin-right: 1rem;
+}
+
+/* --- Step Cards --- */
+.gc-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gc-step {
+  background: var(--gc-white);
+  border: 1px solid var(--gc-gold);
+  border-radius: var(--gc-radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--gc-shadow);
+}
+
+.gc-step-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.gc-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--gc-crimson);
+  color: var(--gc-white);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.gc-step-title {
+  font-family: var(--gc-font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--gc-brown);
+  margin: 0;
+  flex: 1;
+}
+
+.gc-step-rationale {
+  color: var(--gc-body);
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* --- Badges --- */
+.gc-badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.gc-badge-beginner {
+  background: var(--gc-green-light);
+  color: var(--gc-green);
+}
+
+.gc-badge-intermediate {
+  background: var(--gc-amber-light);
+  color: var(--gc-amber);
+}
+
+.gc-badge-advanced {
+  background: var(--gc-red-light);
+  color: #842029;
+}
+
+.gc-badge-free {
+  background: var(--gc-green-light);
+  color: var(--gc-green);
+  margin-left: 0.35rem;
+}
+
+.gc-badge-subscription {
+  background: var(--gc-amber-light);
+  color: var(--gc-amber);
+  margin-left: 0.35rem;
+}
+
+/* --- Database Links --- */
+.gc-databases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.gc-db-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--gc-linen);
+  border: 1px solid var(--gc-gold);
+  border-radius: 4px;
+  color: var(--gc-crimson);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.gc-db-link:hover {
+  background: var(--gc-linen-light);
+  border-color: var(--gc-crimson);
+}
+
+.gc-db-link:focus-visible {
+  outline: 2px solid var(--gc-crimson);
+  outline-offset: 2px;
+}
+
+/* --- OGF Mission Link --- */
+.gc-mission-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--gc-crimson);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed var(--gc-gold);
+}
+
+.gc-mission-link:hover {
+  border-bottom-color: var(--gc-crimson);
+}
+
+/* --- Tips --- */
+.gc-tips {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.gc-tip {
+  padding: 0.5rem 0.75rem;
+  background: var(--gc-linen-light);
+  border-left: 3px solid var(--gc-gold);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gc-muted);
+  border-radius: 0 4px 4px 0;
+}
+
+/* --- Action Bar --- */
+.gc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gc-gold);
+}
+
+.gc-btn {
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--gc-radius);
+  font-family: var(--gc-font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+}
+
+.gc-btn-primary {
+  background: var(--gc-crimson);
+  color: var(--gc-white);
+}
+
+.gc-btn-primary:hover {
+  background: #5e1f2b;
+}
+
+.gc-btn-secondary {
+  background: var(--gc-linen);
+  color: var(--gc-brown);
+  border: 1px solid var(--gc-gold);
+}
+
+.gc-btn-secondary:hover {
+  background: var(--gc-linen-light);
+}
+
+.gc-btn:focus-visible {
+  outline: 3px solid var(--gc-gold);
+  outline-offset: 2px;
+}
+
+/* --- Email Capture --- */
+.gc-email {
+  background: var(--gc-linen);
+  border: 1px solid var(--gc-gold);
+  border-radius: var(--gc-radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.gc-email h3 {
+  font-family: var(--gc-font-heading);
+  color: var(--gc-brown);
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+}
+
+.gc-email p {
+  font-size: 0.9rem;
+  color: var(--gc-muted);
+  margin: 0 0 1rem;
+}
+
+.gc-email-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gc-email-input {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--gc-gold);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--gc-font-body);
+  background: var(--gc-white);
+}
+
+.gc-email-input:focus {
+  outline: 2px solid var(--gc-crimson);
+  outline-offset: 2px;
+}
+
+.gc-email-success {
+  color: var(--gc-green);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .gc-email-row {
+    flex-direction: column;
+  }
+}
+
+/* --- Disclaimer & Disclosure --- */
+.gc-disclaimer {
+  font-size: 0.85rem;
+  color: var(--gc-muted);
+  font-style: italic;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--gc-linen-light);
+  border-radius: 4px;
+}
+
+.gc-affiliate-disclosure {
+  font-size: 0.8rem;
+  color: var(--gc-muted);
+  margin-top: 0.75rem;
+}
+
+/* --- Print Styles --- */
+@media print {
+  .gencreator {
+    max-width: 100%;
+    padding: 0;
+    font-size: 12pt;
+  }
+
+  .gc-plan-header {
+    background: none;
+    border: 2px solid #333;
+    padding: 1rem;
+  }
+
+  .gc-step {
+    box-shadow: none;
+    border: 1px solid #999;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .gc-step-number {
+    background: #333;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .gc-db-link {
+    color: #333;
+    border: 1px solid #999;
+    background: none;
+  }
+
+  .gc-db-link::after {
+    content: " (" attr(href) ")";
+    font-size: 0.7rem;
+    color: #666;
+    word-break: break-all;
+  }
+
+  .gc-badge {
+    border: 1px solid #999;
+    background: none !important;
+    color: #333 !important;
+  }
+
+  .gc-actions,
+  .gc-email,
+  .gc-affiliate-disclosure {
+    display: none;
+  }
+
+  .gc-disclaimer {
+    border: 1px solid #999;
+    background: none;
+  }
+}

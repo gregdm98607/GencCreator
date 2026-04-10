@@ -5,7 +5,7 @@
  * This is the top-level component hydrated as an Astro island.
  */
 
-import { useState } from 'preact/hooks';
+import { useState, useRef, useEffect } from 'preact/hooks';
 import type { AncestorInput, ResearchPlan } from '../lib/types.js';
 import { generatePlan } from '../lib/planner.js';
 import { AncestorForm } from './AncestorForm.js';
@@ -13,6 +13,7 @@ import { ResearchPlanView } from './ResearchPlan.js';
 
 export function GenCreator() {
   const [plan, setPlan] = useState<ResearchPlan | null>(null);
+  const planRef = useRef<HTMLDivElement>(null);
 
   function handleSubmit(input: AncestorInput) {
     const result = generatePlan(input);
@@ -23,12 +24,21 @@ export function GenCreator() {
     setPlan(null);
   }
 
+  // Scroll to plan when it appears
+  useEffect(() => {
+    if (plan && planRef.current) {
+      planRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [plan]);
+
   return (
     <div class="gencreator">
       {plan === null ? (
         <AncestorForm onSubmit={handleSubmit} />
       ) : (
-        <ResearchPlanView plan={plan} onReset={handleReset} />
+        <div ref={planRef}>
+          <ResearchPlanView plan={plan} onReset={handleReset} />
+        </div>
       )}
     </div>
   );
