@@ -1,24 +1,13 @@
 # GenCreator — Claude Code Project Instructions
 
-> **Product:** GenCreator — Interactive Genealogy Research Planner
-> **Owner:** Silver Sage Media (SSM) → Operation Granny Files (OGF)
-> **Tech Lead:** CTO (AI Agent)
-> **Product Owner:** CPO (AI Agent)
-> **Directed by:** SSM CEO (AI Agent)
-> **Reports to:** Chairman — Greg Maxfield
+> **Product:** GenCreator — browser-based genealogy research planner
+> **Owner:** SSM → OGF | **Tech:** CTO (AI) | **Product:** CPO (AI) | **Director:** CEO (AI) | **Chairman:** Greg
 > **Status:** Phase 1 — Conception & Design
 
----
+**Value prop:** "Tell us what you know. We'll tell you what to find next."
+**Target user:** Beginner-to-intermediate genealogist, 35–70, overwhelmed by where to start.
+**Deploy:** Embedded on operationgrannyfiles.com (lead magnet + affiliate revenue).
 
-## What Is GenCreator?
-
-GenCreator is a browser-based interactive genealogy research planner. Users input what they already know about their family (names, dates, locations, records found) and GenCreator generates a prioritized research plan with links to relevant databases.
-
-**Core value proposition:** "Tell us what you know. We'll tell you what to find next."
-
-**Target user:** Beginner-to-intermediate genealogist, 35-70 years old, emotionally motivated by connection to ancestors, overwhelmed by where to start.
-
-**Deployment target:** Embedded on operationgrannyfiles.com as a lead magnet, audience differentiator, and monetization vehicle.
 ---
 
 ## Technical Context
@@ -44,29 +33,13 @@ GenCreator should be built as one of:
 - **Email capture:** ConvertKit/Substack API — capture leads from GenCreator users
 - **Affiliate links:** Ancestry, MyHeritage, FamilySearch, Newspapers.com, FindMyPast — tracked links in research plans
 - **OGF content:** Reference OGF missions and field guides in research plan recommendations
+
 ---
 
-## Governance & Decision Authority
+## Governance
 
-This project operates within the Silver Sage Media C-Suite governance structure:
-
-### Oversight Chain
-```
-Greg Maxfield (Chairman) — final approval on launch, budget > $500/mo, strategic direction
-        │
-    SSM CEO (AI) — directs execution, coordinates cross-unit dependencies
-        │
-    ┌───┴───┐
-   CTO     CPO
-   (how)   (what/why)
-```
-
-### Decision Gates
-1. **Validation → Development:** Requires SSM CEO approval
-2. **Development → Launch:** Requires Chairman (Greg) approval
-3. **Architecture decisions:** CTO authority, consult CPO on user impact
-4. **Feature prioritization:** CPO authority, consult CTO on feasibility
-5. **Revenue/pricing decisions:** CRO authority, coordinated with CPO
+Authority chain: Greg (Chairman, final approval) → CEO (AI, execution) → CTO (how) + CPO (what/why).
+Gates: Validation→Dev requires CEO approval. Dev→Launch requires Greg. Architecture: CTO. Features: CPO. Revenue: CRO+CPO.
 
 ### Key Documents (Obsidian Vault)
 All strategic context lives in the Obsidian vault at `C:\Users\gregm\999_SECOND_BRAIN\_Obsidian\`:
@@ -80,6 +53,7 @@ All strategic context lives in the Obsidian vault at `C:\Users\gregm\999_SECOND_
 - `05_Projects\Operation_Granny_Files\Workstreams\Revenue_Workstream.md` — revenue context
 - `05_Projects\Silver_Sage_Media\C-Suite\CTO\Reports\Architecture_Overview.md` — SSM architecture
 - `05_Projects\Silver_Sage_Media\C-Suite\CTO\Standards\Technical_Standards.md` — coding standards
+
 ---
 
 ## Development Guidelines
@@ -111,6 +85,7 @@ c:\dev\GenCreator\
 ├── tests/                     # Test suite
 └── README.md                  # Public-facing project readme
 ```
+
 ---
 
 ## Current Phase: Conception & Design
@@ -152,5 +127,11 @@ GenCreator's research plans should map to this progression — a beginner gets 1
 
 ---
 
-*Last updated: 2026-04-08*
+*Last updated: 2026-04-17*
 *Created by: CTO Workstream Setup*
+
+---
+
+## Notes
+
+Notes folder: `C:\Dev\gencreator\notes\` — use freely for cross-session observations and breadcrumbs.
