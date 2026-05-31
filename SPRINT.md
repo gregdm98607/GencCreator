@@ -20,9 +20,9 @@
 Pulled from [BACKLOG.md](BACKLOG.md) P0 items the CTO can close without external dependencies. Ordered by execution sequence — baseline check first, then the unblocked pure-code work, then the audit/instrumentation items.
 
 ### Must land
-- [ ] **[P0-0]** Baseline smoke check — `npm test` (expect 25 green) in `C:\Dev\gencreator` + `astro build` green in `C:\Dev\ogf-site`. Confirms nothing rotted in the 39-day gap before building on it.
-- [ ] **[P0-10]** `buildRationale()` — goal-specific prose (remove stub at `src/lib/planner.ts:203`)
-- [ ] **[P0-11]** `buildTips()` — record-specific tips (remove stub at `src/lib/planner.ts:209`)
+- [x] **[P0-0]** Baseline smoke check — `npm test` (expect 25 green) in `C:\Dev\gencreator` + `astro build` green in `C:\Dev\ogf-site`. Confirms nothing rotted in the 39-day gap before building on it.
+- [x] **[P0-10]** `buildRationale()` — goal-specific prose (stub removed; goal-aware + high-value overrides, +tests)
+- [x] **[P0-11]** `buildTips()` — record-specific tips (stub removed; per-record + time-sensitive, +tests)
 - [ ] **[P0-1]** Visual QA — `npm run dev` in OGF site, walk full flow, capture screenshots at 375/768/1280
 - [ ] **[P0-2]** GA4 custom events wired in OGF `BaseHead.astro` / GenCreator components:
   - `gencreator_plan_generated` (ancestor name hash, goal, step count)
@@ -51,6 +51,8 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items the CTO can close without external
 | 2026-04-22 | CTO | Consolidated planning: created ROADMAP.md, BACKLOG.md, SPRINT.md. Updated task_plan.md structure. | Visual QA + GA4 events |
 | 2026-04-23 → 05-30 | — | **(no activity — Sprint 5 lapsed, 0 commits)** | — |
 | 2026-05-31 | CTO | Re-baseline: closed lapsed Sprint 5, opened Sprint 6 (same scope, P0-0 smoke check added), slipped ROADMAP M1/M2/M3 targets, updated task_plan + progress. | P0-0 smoke check → P0-10/P0-11 |
+| 2026-05-31 | CTO | Sprint 6 P0-0 **PASSED** — gencreator 25/25 tests + typecheck clean; OGF `astro build` green (11 pages, /gencreator/ present). | P0-10 / P0-11 enrichment |
+| 2026-05-31 | CTO | **P0-10 + P0-11 done** — enriched `buildRationale()` (goal-aware + overrides) & `buildTips()` (record + time-specific); +5 tests (**30 green**), typecheck clean; synced `planner.ts` → OGF + rebuilt green. | P0-2 GA4; then P0-1/P0-5/P0-6 (browser tooling) |
 
 *Append rows as each session closes. Keep it terse.*
 
