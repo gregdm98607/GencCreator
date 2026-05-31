@@ -1,9 +1,11 @@
-# Current Sprint — MVP Hardening
+# Current Sprint — MVP Hardening (re-baselined)
 
-> **Sprint #:** 5 (first formally-named sprint; sessions 1–4 were scaffold/build)
-> **Window:** 2026-04-22 → 2026-04-30 (≈1 week)
+> **Sprint #:** 6 (re-baseline of the lapsed Sprint 5 — same scope, fresh window)
+> **Window:** 2026-05-31 → 2026-06-12 (provisional ~2 wk; confirm cadence with Greg)
 > **Sprint goal:** Close the M1 Feasibility Prototype exit criteria so CTO can sign feasibility into the Gate 1 packet.
-> **Last updated:** 2026-04-22
+> **Last updated:** 2026-05-31
+
+> ⚠️ **Sprint 5 (2026-04-22 → 04-30) lapsed** — closed unexecuted: 0 of 7 must-land items done, 0 commits in window. Full scope carried into Sprint 6 unchanged. See [progress.md](progress.md) Session 6.
 
 ---
 
@@ -15,9 +17,12 @@
 
 ## In Scope This Sprint
 
-Pulled from [BACKLOG.md](BACKLOG.md) P0 items that the CTO can close without external dependencies.
+Pulled from [BACKLOG.md](BACKLOG.md) P0 items the CTO can close without external dependencies. Ordered by execution sequence — baseline check first, then the unblocked pure-code work, then the audit/instrumentation items.
 
 ### Must land
+- [ ] **[P0-0]** Baseline smoke check — `npm test` (expect 25 green) in `C:\Dev\gencreator` + `astro build` green in `C:\Dev\ogf-site`. Confirms nothing rotted in the 39-day gap before building on it.
+- [ ] **[P0-10]** `buildRationale()` — goal-specific prose (remove stub at `src/lib/planner.ts:203`)
+- [ ] **[P0-11]** `buildTips()` — record-specific tips (remove stub at `src/lib/planner.ts:209`)
 - [ ] **[P0-1]** Visual QA — `npm run dev` in OGF site, walk full flow, capture screenshots at 375/768/1280
 - [ ] **[P0-2]** GA4 custom events wired in OGF `BaseHead.astro` / GenCreator components:
   - `gencreator_plan_generated` (ancestor name hash, goal, step count)
@@ -27,8 +32,6 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items that the CTO can close without ext
   - `gencreator_print`
 - [ ] **[P0-5]** Lighthouse ≥ 90 on Performance, Accessibility, Best Practices, SEO
 - [ ] **[P0-6]** WCAG 2.1 AA quick audit — keyboard nav, focus states, contrast, labels, ARIA
-- [ ] **[P0-10]** `buildRationale()` — goal-specific prose (remove stubs)
-- [ ] **[P0-11]** `buildTips()` — record-specific tips (remove stubs)
 
 ### Stretch
 - [ ] **[P0-3]** ConvertKit API integration (if API key is pulled from the vault this sprint)
@@ -36,7 +39,7 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items that the CTO can close without ext
 
 ### Explicitly NOT in this sprint
 - P0-4 (real affiliate IDs) — blocked on CRO signup status
-- P0-7 / P0-8 / P0-9 (CPO & CRO Gate 1 artifacts) — not CTO work
+- P0-7 / P0-8 / P0-9 (CPO & CRO Gate 1 artifacts) — not CTO work; **now overdue** (see ROADMAP M2 slip)
 - All P1/P2/P3 items
 
 ---
@@ -45,7 +48,9 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items that the CTO can close without ext
 
 | Date | Owner | What changed | Next |
 |------|-------|--------------|------|
-| 2026-04-22 | CTO (this session) | Consolidated planning: created ROADMAP.md, BACKLOG.md, SPRINT.md. Updated task_plan.md structure. | Visual QA + GA4 events |
+| 2026-04-22 | CTO | Consolidated planning: created ROADMAP.md, BACKLOG.md, SPRINT.md. Updated task_plan.md structure. | Visual QA + GA4 events |
+| 2026-04-23 → 05-30 | — | **(no activity — Sprint 5 lapsed, 0 commits)** | — |
+| 2026-05-31 | CTO | Re-baseline: closed lapsed Sprint 5, opened Sprint 6 (same scope, P0-0 smoke check added), slipped ROADMAP M1/M2/M3 targets, updated task_plan + progress. | P0-0 smoke check → P0-10/P0-11 |
 
 *Append rows as each session closes. Keep it terse.*
 
@@ -67,6 +72,8 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items that the CTO can close without ext
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
+| 39-day gap left dependencies/build broken | M | M | P0-0 smoke check **first** — don't build on an unverified baseline |
+| Schedule keeps slipping (Sprint 5 already lapsed) | M | H | Provisional 2-wk window; if cadence is uncertain, scope down to P0-0 + P0-10 + P0-11 (pure-code, no deps) as the minimum viable session |
 | ConvertKit API key not found / account issue | M | Low (stretch only) | Leave EmailCapture.tsx simulated; log as P0-3 still open |
 | Lighthouse flunks on CLS or LCP | L | M | Preact island is small; if it flunks, investigate font loading and CSS var fallbacks |
 | A11y gaps found late | M | M | Run axe-core early, not end of sprint |
@@ -74,16 +81,16 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items that the CTO can close without ext
 
 ---
 
-## Next Sprint Preview (Sprint 6)
+## Next Sprint Preview (Sprint 7)
 
 Tentative scope — confirm in sprint planning:
-- CPO concept validation sessions (if CPO is ready)
+- CPO concept validation sessions (if CPO is ready) — **overdue Gate 1 blocker**
 - ConvertKit if it slipped
 - Real affiliate ID swap (if CRO cleared programs)
 - Copy polish pass (P1-8)
 - E2E Playwright spike (P3-3) — probably defer
 
-Sprint 6 may pivot to support Gate 1 packet assembly if CPO/CRO artifacts land.
+Sprint 7 may pivot to support Gate 1 packet assembly if CPO/CRO artifacts land.
 
 ---
 

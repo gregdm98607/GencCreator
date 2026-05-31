@@ -1,7 +1,7 @@
 # GenCreator Backlog
 
 > **Purpose:** Prioritized list of work not yet committed to a sprint. Anything scope-creepy or "nice-to-have" lives here, not in SPRINT.md.
-> **Last updated:** 2026-04-22
+> **Last updated:** 2026-05-31
 > **Sizing:** XS (<1hr) · S (1–4hr) · M (half-day to day) · L (multi-day) · XL (week+)
 
 **Rules:**
@@ -21,7 +21,7 @@
 | P0-4 | Swap placeholder affiliate IDs → real ones | S | CRO | 🔒 Blocked on affiliate program signups |
 | P0-5 | Lighthouse ≥ 90 across all categories | S | CTO | After P0-1 |
 | P0-6 | WCAG 2.1 AA audit + fixes | M | CTO | Target-audience skew 35–70 makes this load-bearing |
-| P0-7 | MVP_SPEC_DRAFT.md → MVP_SPEC_v1.md (finalized) | M | CPO | 🔒 Due 2026-05-30, Gate 1 blocker |
+| P0-7 | MVP_SPEC_DRAFT.md → MVP_SPEC_v1.md (finalized) | M | CPO | 🔒 ⚠️ **OVERDUE** (was due 2026-05-30), Gate 1 blocker |
 | P0-8 | Revenue model doc | M | CRO | 🔒 Gate 1 blocker |
 | P0-9 | Concept validation with 5–10 OGF subscribers | M | CPO | 🔒 Gate 1 blocker |
 | P0-10 | Enrich `buildRationale()` — goal-specific prose | S | CTO | Currently stubbed |

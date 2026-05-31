@@ -1,7 +1,7 @@
 # GenCreator Roadmap
 
 > **Owner:** CTO (technical) / CPO (product) / CEO (gate approvals)
-> **Last updated:** 2026-04-22
+> **Last updated:** 2026-05-31
 > **Governance:** See [GOVERNANCE.md](GOVERNANCE.md) for gate approvers and escalation paths.
 
 ---
@@ -10,15 +10,17 @@
 
 | Milestone | Gate | Approver | Target | Status |
 |-----------|------|----------|--------|--------|
-| M1 — Feasibility Prototype | Internal | CTO | 2026-04-30 | ✅ ~90% (done; polish remaining) |
-| M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO | 2026-05-30 | 🟡 In flight (CPO owns) |
-| M3 — MVP Hardening + Beta | Internal | CTO + CPO | 2026-06-30 | ⬜ Not started |
+| M1 — Feasibility Prototype | Internal | CTO | ~~2026-04-30~~ → 2026-06-12 | 🟡 ~90% — polish slipped (Sprint 5 lapsed); finishing in Sprint 6 |
+| M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO | ~~2026-05-30~~ → 2026-06-30 (proposed) | 🔴 Slipped — target passed 2026-05-30; CPO/CRO artifacts not in repo |
+| M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → 2026-07-31 (proposed) | ⬜ Not started (gated on M1 + M2) |
 | M4 — Launch on OGF | Gate 2 (Dev→Launch) | Chairman (Greg) | Q3 2026 | ⬜ Not started |
 | M5 — 90-Day Evaluation | Gate 3 (Post-launch) | Chairman | Q4 2026 | ⬜ Not started |
 
+> **🔄 Schedule re-baseline (2026-05-31):** Sprint 5 lapsed with no activity for 39 days; the M1 polish and M2/Gate 1 deadlines (2026-05-30) passed unmet. Targets above are reset to reflect a realistic restart from today. **CTO-owned dates** (M1, Sprint 6) are committed; **product/gate-owned dates** (M2, M3) are *proposed* pending CPO/CEO/CRO confirmation. M4/M5 (Q3/Q4 2026) are unchanged but now carry compression risk. See [SPRINT.md](../SPRINT.md) + progress.md Session 6.
+
 ---
 
-## M1 — Feasibility Prototype (now — 2026-04-30)
+## M1 — Feasibility Prototype (re-targeted → 2026-06-12)
 
 **Goal:** Prove the end-to-end concept is buildable within SSM stack constraints. De-risk architecture before CPO finalizes the spec.
 
@@ -37,7 +39,7 @@
 
 ---
 
-## M2 — MVP Spec Finalized + Gate 1 (2026-05-01 — 2026-05-30)
+## M2 — MVP Spec Finalized + Gate 1 (slipped; re-target → 2026-06-30, proposed)
 
 **Goal:** Lock the MVP product definition. Get CEO authorization to leave Conception phase.
 
@@ -61,7 +63,7 @@
 
 ---
 
-## M3 — MVP Hardening + Beta (2026-06-01 — 2026-06-30)
+## M3 — MVP Hardening + Beta (re-target → 2026-07-31, proposed)
 
 **Goal:** Ship-quality MVP with real affiliate links, real email capture, real analytics, validated with beta users.
 
