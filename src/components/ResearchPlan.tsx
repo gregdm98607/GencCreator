@@ -6,6 +6,7 @@
  */
 
 import type { ResearchPlan } from '../lib/types.js';
+import { track } from '../lib/analytics.js';
 import { ResearchStepCard } from './ResearchStep.js';
 import { EmailCapture } from './EmailCapture.js';
 
@@ -27,6 +28,10 @@ const GOAL_LABELS: Record<string, string> = {
 
 export function ResearchPlanView({ plan, onReset }: ResearchPlanViewProps) {
   function handlePrint() {
+    track('gencreator_print', {
+      research_goal: plan.ancestor.researchGoal,
+      step_count: plan.steps.length,
+    });
     window.print();
   }
 

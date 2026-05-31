@@ -6,12 +6,14 @@
  */
 
 import type { ResearchStep } from '../lib/types.js';
+import { track } from '../lib/analytics.js';
 
 interface ResearchStepCardProps {
   step: ResearchStep;
 }
 
 export function ResearchStepCard({ step }: ResearchStepCardProps) {
+  const mission = step.ogfMission;
   return (
     <div class="gc-step">
       <div class="gc-step-header">
@@ -35,6 +37,14 @@ export function ResearchStepCard({ step }: ResearchStepCardProps) {
             class="gc-db-link"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              track('gencreator_affiliate_click', {
+                database: db.name,
+                record_type: step.recordType,
+                access_model: db.accessModel,
+                is_affiliate: db.isAffiliate,
+              })
+            }
           >
             {db.name}
             <span class={`gc-badge gc-badge-${db.accessModel}`}>
@@ -45,10 +55,20 @@ export function ResearchStepCard({ step }: ResearchStepCardProps) {
       </div>
 
       {/* OGF Mission link */}
-      {step.ogfMission && (
+      {mission && (
         <div>
-          <a href={step.ogfMission.url} class="gc-mission-link">
-            OGF Mission: {step.ogfMission.title} ({step.ogfMission.level})
+          <a
+            href={mission.url}
+            class="gc-mission-link"
+            onClick={() =>
+              track('gencreator_mission_click', {
+                mission_title: mission.title,
+                mission_level: mission.level,
+                record_type: step.recordType,
+              })
+            }
+          >
+            OGF Mission: {mission.title} ({mission.level})
           </a>
         </div>
       )}

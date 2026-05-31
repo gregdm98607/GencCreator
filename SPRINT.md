@@ -24,7 +24,7 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items the CTO can close without external
 - [x] **[P0-10]** `buildRationale()` — goal-specific prose (stub removed; goal-aware + high-value overrides, +tests)
 - [x] **[P0-11]** `buildTips()` — record-specific tips (stub removed; per-record + time-sensitive, +tests)
 - [ ] **[P0-1]** Visual QA — `npm run dev` in OGF site, walk full flow, capture screenshots at 375/768/1280
-- [ ] **[P0-2]** GA4 custom events wired in OGF `BaseHead.astro` / GenCreator components:
+- [x] **[P0-2]** GA4 custom events wired (via `lib/analytics.ts` → global gtag already in `BaseHead.astro`):
   - `gencreator_plan_generated` (ancestor name hash, goal, step count)
   - `gencreator_email_captured`
   - `gencreator_affiliate_click` (database name, record type)
@@ -53,6 +53,7 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items the CTO can close without external
 | 2026-05-31 | CTO | Re-baseline: closed lapsed Sprint 5, opened Sprint 6 (same scope, P0-0 smoke check added), slipped ROADMAP M1/M2/M3 targets, updated task_plan + progress. | P0-0 smoke check → P0-10/P0-11 |
 | 2026-05-31 | CTO | Sprint 6 P0-0 **PASSED** — gencreator 25/25 tests + typecheck clean; OGF `astro build` green (11 pages, /gencreator/ present). | P0-10 / P0-11 enrichment |
 | 2026-05-31 | CTO | **P0-10 + P0-11 done** — enriched `buildRationale()` (goal-aware + overrides) & `buildTips()` (record + time-specific); +5 tests (**30 green**), typecheck clean; synced `planner.ts` → OGF + rebuilt green. | P0-2 GA4; then P0-1/P0-5/P0-6 (browser tooling) |
+| 2026-05-31 | CTO | **P0-2 done** — 5 GA4 events via new `lib/analytics.ts` (`track()` + `hashName()`, no-PII); wired into GenCreator/ResearchPlan/ResearchStep/EmailCapture; +6 tests (**36 green**); synced to OGF (6 components byte-identical mod paths) + rebuilt green. | P0-1 / P0-5 / P0-6 (need dev server + browser/Lighthouse/axe) |
 
 *Append rows as each session closes. Keep it terse.*
 

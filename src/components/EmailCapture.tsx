@@ -7,6 +7,7 @@
 
 import { useState } from 'preact/hooks';
 import type { ResearchPlan } from '../lib/types.js';
+import { track } from '../lib/analytics.js';
 
 interface EmailCaptureProps {
   plan: ResearchPlan;
@@ -26,6 +27,10 @@ export function EmailCapture({ plan }: EmailCaptureProps) {
     // For now, simulate success after a short delay
     setTimeout(() => {
       setStatus('sent');
+      track('gencreator_email_captured', {
+        research_goal: plan.ancestor.researchGoal,
+        step_count: plan.steps.length,
+      });
     }, 800);
   }
 

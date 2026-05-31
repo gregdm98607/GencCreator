@@ -8,6 +8,7 @@
 import { useState, useRef, useEffect } from 'preact/hooks';
 import type { AncestorInput, ResearchPlan } from '../lib/types.js';
 import { generatePlan } from '../lib/planner.js';
+import { track, hashName } from '../lib/analytics.js';
 import { AncestorForm } from './AncestorForm.js';
 import { ResearchPlanView } from './ResearchPlan.js';
 
@@ -18,6 +19,11 @@ export function GenCreator() {
   function handleSubmit(input: AncestorInput) {
     const result = generatePlan(input);
     setPlan(result);
+    track('gencreator_plan_generated', {
+      research_goal: input.researchGoal,
+      step_count: result.steps.length,
+      name_hash: hashName(input.name),
+    });
   }
 
   function handleReset() {
