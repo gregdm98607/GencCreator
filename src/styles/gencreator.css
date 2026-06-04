@@ -18,7 +18,7 @@
   --gc-white: #FFFFFF;
   --gc-green: #2D6A4F;
   --gc-green-light: #D8F3DC;
-  --gc-amber: #B8860B;
+  --gc-amber: #7A5900; /* darkened from #B8860B for WCAG AA: 4.5:1 on --gc-amber-light */
   --gc-amber-light: #FFF3CD;
   --gc-red-light: #F8D7DA;
   --gc-font-body: Calibri, 'Segoe UI', system-ui, sans-serif;

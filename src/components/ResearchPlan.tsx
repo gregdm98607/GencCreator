@@ -36,7 +36,7 @@ export function ResearchPlanView({ plan, onReset }: ResearchPlanViewProps) {
   }
 
   return (
-    <div class="gc-plan" aria-label="Research plan results">
+    <div class="gc-plan" role="region" aria-label="Research plan results">
       {/* --- Header --- */}
       <div class="gc-plan-header">
         <h2>Research Plan for {plan.ancestor.name}</h2>

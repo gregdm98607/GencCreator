@@ -29,7 +29,7 @@ export function ResearchStepCard({ step }: ResearchStepCardProps) {
       <p class="gc-step-rationale">{step.rationale}</p>
 
       {/* Database links */}
-      <div class="gc-databases" aria-label="Where to search">
+      <div class="gc-databases" role="group" aria-label="Where to search">
         {step.databases.map((db) => (
           <a
             key={db.name}
