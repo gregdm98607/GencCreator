@@ -11,7 +11,7 @@
 | Milestone | Gate | Approver | Target | Status |
 |-----------|------|----------|--------|--------|
 | M1 — Feasibility Prototype | Internal | CTO | ~~2026-04-30~~ → 2026-06-03 | 🟢 **Complete** — all exit criteria met (Sprint 6 closed 2026-06-03); CTO feasibility signed off 2026-06-06 |
-| M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO | ~~2026-05-30~~ → 2026-06-30 (proposed) | 🟡 CTO leg done ([CTO_FEASIBILITY_ASSESSMENT.md](CTO_FEASIBILITY_ASSESSMENT.md), 2026-06-06); **CPO + CRO artifacts overdue** |
+| M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO | ~~2026-05-30~~ → **2026-06-21** | 🟢 **All 3 artifacts in** (CTO feasibility, CPO spec, CRO model — all 2026-06); awaiting validation evidence (~6/15) + CEO convening. Affiliate *approvals* still overdue (Phase 3 blocker, not gate) |
 | M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → 2026-07-31 (proposed) | ⬜ Not started (gated on M1 + M2) |
 | M4 — Launch on OGF | Gate 2 (Dev→Launch) | Chairman (Greg) | Q3 2026 | ⬜ Not started |
 | M5 — 90-Day Evaluation | Gate 3 (Post-launch) | Chairman | Q4 2026 | ⬜ Not started |
@@ -39,16 +39,18 @@
 
 ---
 
-## M2 — MVP Spec Finalized + Gate 1 (slipped; re-target → 2026-06-30, proposed)
+## M2 — MVP Spec Finalized + Gate 1 (re-target → 2026-06-21; data-driven Path 1)
 
 **Goal:** Lock the MVP product definition. Get CEO authorization to leave Conception phase.
 
-**CPO deliverables:**
-- Finalize `MVP_SPEC_DRAFT.md` → `MVP_SPEC_v1.md` (remove DRAFT, resolve open questions)
-- Validate concept with 5-10 OGF subscribers (user research: do they "get it"?)
-- Decide: email-gated results? (currently: show freely — per Greg 2026-04-09)
-- Decide: share-plan-by-URL feature in MVP or backlog?
-- Decide: LLM augmentation in MVP (knowledge base + LLM polish) or static only?
+> **Gate is now mechanical (Path 1).** Per CPO spec v1 (`CPO_GenCreator_MVP_Spec_v1_2026-06-02.md`), the V→D gate runs a §7.D GO / GO-WITH-FIXES / NO-GO rule against validation metrics B1–B5 from a 5–10-reader async test (window 6/1–6/14, recruitment posted 6/4). SSM CEO owns the gate.
+
+**CPO deliverables:** ✅ spec DONE (v1, scope locked); 🟡 validation in flight (results ~6/15)
+- [x] Finalize MVP spec → `CPO_GenCreator_MVP_Spec_v1_2026-06-02.md` (DRAFT resolved; open questions dispositioned §10)
+- [ ] Validate concept with 5-10 OGF subscribers — async test 6/1–6/14
+- [x] Email-gated results? → **optional capture AFTER plan renders** (value-first; Kit tag on opt-in)
+- [x] Share-plan-by-URL? → out of MVP (non-goal; V2+)
+- [x] LLM augmentation? → **static only** for MVP (rules-based, no-LLM)
 
 **CRO deliverables:**
 - Finalized affiliate program status (Ancestry, MyHeritage, Newspapers.com signup or deferral)
@@ -68,12 +70,15 @@
 **Goal:** Ship-quality MVP with real affiliate links, real email capture, real analytics, validated with beta users.
 
 **Scope:**
-- Swap placeholder affiliate IDs for real ones (CRO-approved programs)
-- ConvertKit API integration (real email capture, not simulated)
-- Knowledge base enrichment: goal-specific rationales, record-specific tips
+- Affiliate links: **CJ deep-link builder** (Ancestry/MyHeritage/FindMyPast via Commission Junction, PID 7928154) + keep Amazon `tag` model — NOT a simple ID swap (CRO model; findings.md Finding 14). Gated on CRO approvals (overdue). Telemetry prereq (CD-2026-006) likely already met by GA4 `gencreator_affiliate_click`.
+- Kit (ConvertKit) API integration (real email capture, not simulated) — tag `gencreator-plan-generated` on opt-in
+- Route rename → `/research-planner` (alias `/gencreator`)
+- Knowledge base enrichment: goal-specific rationales, record-specific tips; Mountain-West depth (validation refinement list)
 - Error states + empty states polished
-- Content audit: tone, copy, disclaimers (CPO review)
+- Content audit: tone, copy (light Granny voice), FTC disclosure vs. CRO framework (CPO/CRO review)
 - 5-10 beta testers from OGF list, feedback loop, 2 iterations
+
+> **Paid tier ("GenCreator Plus", $19.99/mo) is NOT in M3.** Deferred to the Q3 paid-tier corridor (CD-2026-016), gated on the standalone decision + Chairman pricing approval. MVP/beta launches **affiliate-only**.
 
 **Exit criteria:** No P0/P1 bugs from beta. Plan quality rated 4+/5 average by beta testers.
 

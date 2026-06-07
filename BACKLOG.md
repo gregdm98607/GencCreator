@@ -17,13 +17,13 @@
 |----|-------|------|-------|-------|
 | P0-1 | Visual QA on `/gencreator` (desktop + mobile + print) | S | CTO | Pulled into current sprint |
 | P0-2 | GA4 custom events (5 events — see SPRINT.md) | S | CTO | Pulled into current sprint |
-| P0-3 | ConvertKit API integration (real email send) | M | CTO | Depends on API key from vault |
-| P0-4 | Swap placeholder affiliate IDs → real ones | S | CRO | 🔒 Blocked on affiliate program signups |
+| P0-3 | Kit (ConvertKit) API integration (real email send) | M | CTO | Depends on API key from vault; tag `gencreator-plan-generated` on opt-in |
+| P0-4 | Real affiliate links — **CJ deep-link builder** (not just an ID swap) | M | CTO+CRO | 🔒 Blocked on CRO approvals. Ancestry/MyHeritage/FindMyPast via Commission Junction (PID 7928154) need redirect URLs; `affiliate.ts` is Amazon `tag=` only. Re-sized S→M (Finding 14) |
 | P0-5 | Lighthouse ≥ 90 across all categories | S | CTO | After P0-1 |
 | P0-6 | WCAG 2.1 AA audit + fixes | M | CTO | Target-audience skew 35–70 makes this load-bearing |
-| P0-7 | MVP_SPEC_DRAFT.md → MVP_SPEC_v1.md (finalized) | M | CPO | 🔒 ⚠️ **OVERDUE** (was due 2026-05-30), Gate 1 blocker |
-| P0-8 | Revenue model doc | M | CRO | 🔒 Gate 1 blocker |
-| P0-9 | Concept validation with 5–10 OGF subscribers | M | CPO | 🔒 Gate 1 blocker |
+| P0-7 | MVP spec finalized | M | CPO | ✅ **DONE** — CPO_GenCreator_MVP_Spec_v1_2026-06-02 (Finding 13) |
+| P0-8 | Revenue model doc | M | CRO | ✅ **DONE** — GenCreator_Revenue_Model_2026-06-06 (Finding 14) |
+| P0-9 | Concept validation with 5–10 OGF subscribers | M | CPO | 🟡 **IN FLIGHT** — async test 6/1–6/14; recruitment posted 6/4; results ~6/15 |
 | P0-10 | Enrich `buildRationale()` — goal-specific prose | S | CTO | Currently stubbed |
 | P0-11 | Enrich `buildTips()` — record-specific tips | S | CTO | Currently stubbed |
 
