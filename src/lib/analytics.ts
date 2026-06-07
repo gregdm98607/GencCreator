@@ -8,6 +8,7 @@
  */
 
 export type GenCreatorEvent =
+  | 'gencreator_form_started'
   | 'gencreator_plan_generated'
   | 'gencreator_email_captured'
   | 'gencreator_affiliate_click'

@@ -24,6 +24,13 @@ describe('track', () => {
     });
   });
 
+  it('forwards gencreator_form_started (the B3 funnel start event)', () => {
+    const gtag = vi.fn();
+    vi.stubGlobal('window', { gtag });
+    track('gencreator_form_started');
+    expect(gtag).toHaveBeenCalledWith('event', 'gencreator_form_started', {});
+  });
+
   it('swallows errors thrown by gtag so the UI never breaks', () => {
     const gtag = vi.fn(() => {
       throw new Error('blocked by extension');

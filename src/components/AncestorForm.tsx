@@ -5,8 +5,9 @@
  * Accessible: visible labels, ARIA, keyboard navigation, 16px min text.
  */
 
-import { useState } from 'preact/hooks';
+import { useRef, useState } from 'preact/hooks';
 import type { AncestorInput, RecordType, ResearchGoal } from '../lib/types.js';
+import { track } from '../lib/analytics.js';
 
 interface AncestorFormProps {
   onSubmit: (input: AncestorInput) => void;
@@ -56,6 +57,16 @@ export function AncestorForm({ onSubmit }: AncestorFormProps) {
   const [recordsFound, setRecordsFound] = useState<RecordType[]>([]);
   const [researchGoal, setResearchGoal] = useState<ResearchGoal>('general_exploration');
 
+  // Fire gencreator_form_started exactly once, on the user's first interaction
+  // with any field. Gives B3 (form-completion rate) a denominator: started vs.
+  // gencreator_plan_generated (completed).
+  const startedRef = useRef(false);
+  function markStarted() {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    track('gencreator_form_started');
+  }
+
   function toggleRecord(rt: RecordType) {
     setRecordsFound((prev) =>
       prev.includes(rt) ? prev.filter((r) => r !== rt) : [...prev, rt],
@@ -80,7 +91,13 @@ export function AncestorForm({ onSubmit }: AncestorFormProps) {
   }
 
   return (
-    <form class="gc-form" onSubmit={handleSubmit} aria-label="Ancestor research planner">
+    <form
+      class="gc-form"
+      onSubmit={handleSubmit}
+      onInput={markStarted}
+      onChange={markStarted}
+      aria-label="Ancestor research planner"
+    >
       <h2>Tell Us What You Know</h2>
       <p class="gc-form-intro">
         Enter what you know about your ancestor and we'll create a prioritized
