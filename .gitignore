@@ -7,6 +7,9 @@ dist/
 # VS Code
 .vscode/
 
+# Claude Code local config & worktrees (machine-specific, not committed)
+.claude/
+
 # OS
 Thumbs.db
 Desktop.ini
@@ -17,3 +20,8 @@ task_plan.md
 findings.md
 progress.md
 nextprompt.md
+
+# QA artifacts — keep the human-readable summary, ignore bulky generated reports
+qa/**/*.report.html
+qa/**/*.report.json
+qa/**/lh-*.json

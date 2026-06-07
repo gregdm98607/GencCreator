@@ -10,8 +10,8 @@
 
 | Milestone | Gate | Approver | Target | Status |
 |-----------|------|----------|--------|--------|
-| M1 — Feasibility Prototype | Internal | CTO | ~~2026-04-30~~ → 2026-06-12 | 🟡 ~90% — polish slipped (Sprint 5 lapsed); finishing in Sprint 6 |
-| M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO | ~~2026-05-30~~ → 2026-06-30 (proposed) | 🔴 Slipped — target passed 2026-05-30; CPO/CRO artifacts not in repo |
+| M1 — Feasibility Prototype | Internal | CTO | ~~2026-04-30~~ → 2026-06-03 | 🟢 **Complete** — all exit criteria met (Sprint 6 closed 2026-06-03); CTO feasibility signed off 2026-06-06 |
+| M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO | ~~2026-05-30~~ → 2026-06-30 (proposed) | 🟡 CTO leg done ([CTO_FEASIBILITY_ASSESSMENT.md](CTO_FEASIBILITY_ASSESSMENT.md), 2026-06-06); **CPO + CRO artifacts overdue** |
 | M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → 2026-07-31 (proposed) | ⬜ Not started (gated on M1 + M2) |
 | M4 — Launch on OGF | Gate 2 (Dev→Launch) | Chairman (Greg) | Q3 2026 | ⬜ Not started |
 | M5 — 90-Day Evaluation | Gate 3 (Post-launch) | Chairman | Q4 2026 | ⬜ Not started |
@@ -30,10 +30,10 @@
 - [x] Plan generation algorithm implemented and unit-tested
 - [x] Full UI component tree built against OGF's "Archival Warmth" design system
 - [x] Integrated into OGF site — `/gencreator` page live in build
-- [ ] Visual QA complete (dev server, responsive check at 375/768/1280)
-- [ ] GA4 custom events wired (5 events — see [SPRINT.md](../SPRINT.md))
-- [ ] Lighthouse ≥ 90 across all categories
-- [ ] WCAG 2.1 AA pass
+- [x] Visual QA complete (dev server, responsive check at 375/768/1280)
+- [x] GA4 custom events wired (5 events — see [SPRINT.md](../SPRINT.md))
+- [x] Lighthouse ≥ 90 across all categories (clean run 99/96/96/100)
+- [x] WCAG 2.1 AA pass (GenCreator UI axe-clean)
 
 **Deliverable:** A working `/gencreator` page that a beta tester can click through, even if ConvertKit and final copy are stubs.
 
@@ -55,9 +55,9 @@
 - Revenue projection: leads/month × conversion × affiliate value
 - Monetization plan (free MVP vs. premium tier timing)
 
-**CTO deliverables:**
-- Feasibility confirmed (M1 exit = CTO sign-off on feasibility)
-- Production readiness checklist (perf, a11y, error handling, analytics)
+**CTO deliverables:** ✅ **DONE** (2026-06-06) — see [CTO_FEASIBILITY_ASSESSMENT.md](CTO_FEASIBILITY_ASSESSMENT.md)
+- [x] Feasibility confirmed (M1 exit = CTO sign-off on feasibility)
+- [x] Production readiness checklist (perf, a11y, error handling, analytics) — in the assessment §6
 
 **Gate 1 approval (SSM CEO):** all three deliverables reviewed → authorizes Development phase.
 
