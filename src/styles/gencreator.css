@@ -487,6 +487,11 @@
   font-weight: 600;
 }
 
+.gc-email-error {
+  color: var(--gc-crimson);
+  font-weight: 600;
+}
+
 @media (max-width: 480px) {
   .gc-email-row {
     flex-direction: column;

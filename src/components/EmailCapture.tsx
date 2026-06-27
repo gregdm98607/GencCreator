@@ -1,13 +1,14 @@
 /**
  * EmailCapture — "Email me this plan" widget.
  *
- * Optional (not gated). UI only for now — backend integration (ConvertKit)
- * will be added in Phase F.
+ * Optional (not gated). Subscribes the user through the GenCreator Kit form.
  */
 
 import { useState } from 'preact/hooks';
 import type { ResearchPlan } from '../lib/types.js';
 import { track } from '../lib/analytics.js';
+
+const KIT_FORM_ACTION = 'https://app.kit.com/forms/9616629/subscriptions';
 
 interface EmailCaptureProps {
   plan: ResearchPlan;
@@ -17,29 +18,49 @@ export function EmailCapture({ plan }: EmailCaptureProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  function handleSubmit(e: Event) {
+  async function handleSubmit(e: Event) {
     e.preventDefault();
     if (!email.trim()) return;
 
     setStatus('sending');
 
-    // TODO: Phase F — POST to /api/gencreator-email (Astro API route → ConvertKit)
-    // For now, simulate success after a short delay
-    setTimeout(() => {
+    const formData = new FormData();
+    formData.set('email_address', email.trim());
+    formData.set('fields[lead_source_page]', 'gencreator');
+    formData.set('fields[research_goal]', plan.ancestor.researchGoal);
+    formData.set('fields[step_count]', String(plan.steps.length));
+
+    try {
+      const response = await fetch(KIT_FORM_ACTION, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+      const result = await response.json().catch(() => ({ status: 'success' }));
+
+      if (!response.ok && result?.status !== 'quarantined') {
+        throw new Error('Kit subscription failed');
+      }
+      if (result?.status && result.status !== 'success' && result.status !== 'quarantined') {
+        throw new Error('Kit subscription failed');
+      }
+
       setStatus('sent');
       track('gencreator_email_captured', {
         research_goal: plan.ancestor.researchGoal,
         step_count: plan.steps.length,
       });
-    }, 800);
+    } catch {
+      setStatus('error');
+    }
   }
 
   if (status === 'sent') {
     return (
       <div class="gc-email" role="status" aria-live="polite">
         <p class="gc-email-success">
-          Your research plan for {plan.ancestor.name} has been sent to {email}.
-          Check your inbox!
+          You're on the Operation Granny Files list at {email}. Keep this plan
+          open or use Print Plan to save a copy before you go.
         </p>
       </div>
     );
@@ -49,8 +70,8 @@ export function EmailCapture({ plan }: EmailCaptureProps) {
     <div class="gc-email">
       <h3>Email Me This Plan</h3>
       <p>
-        Save your research plan for later. We'll send it to your inbox so you
-        can reference it when you sit down to research.
+        Join the Operation Granny Files list for follow-up help with this
+        research plan.
       </p>
       <form onSubmit={handleSubmit} class="gc-email-row">
         <input
@@ -71,6 +92,11 @@ export function EmailCapture({ plan }: EmailCaptureProps) {
           {status === 'sending' ? 'Sending...' : 'Send My Plan'}
         </button>
       </form>
+      {status === 'error' && (
+        <p class="gc-email-error" role="alert">
+          Something went wrong. Try again, or use Print Plan to save this plan now.
+        </p>
+      )}
       <p class="gc-affiliate-disclosure" style={{ marginTop: '0.5rem' }}>
         By submitting your email, you'll also be subscribed to the Operation
         Granny Files newsletter. You can unsubscribe anytime.

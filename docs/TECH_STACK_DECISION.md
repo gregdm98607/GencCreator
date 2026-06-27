@@ -3,7 +3,7 @@
 > **Decision:** APPROVED
 > **Date:** 2026-04-16
 > **Author:** CTO (Shared Services)
-> **Status:** Final — aligns with SSM Astro/Vercel standard; no deviations required
+> **Status:** Updated 2026-06-27 — aligns with SSM Astro/Vercel standard; styling adjusted to match deployed OGF reality
 
 ---
 
@@ -17,7 +17,7 @@ The GenCreator MVP will use the SSM standard stack with no deviations. The techn
 |-------|-----------|---------------|
 | Host site | Astro SSG | OGF site (operationgrannyfiles.com) |
 | Interactive component | Preact via `@astrojs/preact` | ~3KB; React-compatible; Astro first-class support |
-| Styling | Tailwind CSS | Utility-first; consistent with all SSM properties |
+| Styling | Handwritten CSS + OGF CSS custom properties | OGF does not use Tailwind; GenCreator ships `gencreator.css` and inherits "Archival Warmth" tokens |
 | Knowledge base | TypeScript/JSON static data files | No database for MVP |
 | Email integration | ConvertKit API (server-side) | OGF's existing platform; via Astro API route |
 | Affiliate tracking | UTM parameters + affiliate IDs | Configured in database-directory.json |
@@ -30,7 +30,7 @@ The GenCreator MVP will use the SSM standard stack with no deviations. The techn
 
 ## Deviation Assessment
 
-No deviations from SSM standard are required. GenCreator uses the same Astro + Tailwind + Vercel stack as all SSM web properties. The only addition is Preact (via the official Astro integration), which is a lightweight dependency justified by GenCreator's interactive form requirements.
+No deployment-stack deviations from SSM standard are required. GenCreator uses Astro + Vercel in the OGF site, with Preact added via the official Astro integration for the interactive planner. Styling deliberately follows OGF's existing handwritten CSS system rather than Tailwind, because the live host site does not use Tailwind.
 
 ## Dependencies Confirmed
 

@@ -2,7 +2,7 @@
 
 > **Owner:** CTO (AI Agent)
 > **Date:** 2026-04-08
-> **Status:** Draft — architectural decisions pending prototype validation
+> **Status:** Updated 2026-06-27 — prototype validated and deployed at `/research-planner/` and `/gencreator/`
 
 ---
 
@@ -36,7 +36,7 @@
 |-------|-----------|-----------|
 | **Host site** | Astro SSG (OGF) | SSM standard; GenCreator lives as a page/island in OGF |
 | **Interactive component** | Preact (via `@astrojs/preact`) | Lightweight React-compatible; Astro has first-class support; 3KB vs 40KB for React |
-| **Styling** | Tailwind CSS | Consistent with SSM sites; utility-first; responsive |
+| **Styling** | Handwritten CSS + OGF design tokens | OGF uses custom CSS, not Tailwind; GenCreator inherits "Archival Warmth" through `gencreator.css` |
 | **Knowledge base** | TypeScript/JSON data files | Static data; no database needed for MVP |
 | **Email integration** | ConvertKit API (server-side) | OGF's existing email platform; Astro API route handles the call |
 | **Affiliate tracking** | UTM parameters + affiliate IDs | Standard; configured in database-directory.json |
@@ -70,7 +70,7 @@ OGF Astro Site (operationgrannyfiles.com)
 │   └── utils/
 │       ├── scoring.ts                   # Priority scoring algorithm
 │       └── affiliate.ts                 # Affiliate link generation
-├── src/pages/api/gencreator-email.ts    # API route: send plan via email
+├── src/pages/api/gencreator-email.ts    # Planned API route: send plan via email (not deployed yet)
 └── tests/gencreator/
     ├── planner.test.ts                  # Plan generation tests
     ├── scoring.test.ts                  # Scoring algorithm tests
@@ -81,7 +81,14 @@ OGF Astro Site (operationgrannyfiles.com)
 ## Integration Architecture
 
 ### OGF Site Integration
-GenCreator components developed in this repo are integrated into the OGF site build. During development, this repo serves as the workspace; for deployment, the components are copied or symlinked into the OGF project at `c:\dev\operation-granny-files\` (or equivalent OGF repo path).
+GenCreator components developed in this repo are integrated into the OGF site build. During development, this repo serves as the workspace; for deployment, the components are copied into the OGF project at `C:\Dev\ogf-site\`.
+
+**Current deployed state (verified 2026-06-27):**
+- Public route: `https://www.operationgrannyfiles.com/research-planner/` returns 200 and contains the planner.
+- Compatibility route: `https://www.operationgrannyfiles.com/gencreator/` returns 200 and contains the planner.
+- Live sitemap: `https://operationgrannyfiles.com/sitemap-0.xml` includes both routes. `https://www.operationgrannyfiles.com/sitemap.xml` returns 404; use `sitemap-index.xml`.
+- OGF page uses `<GenCreator client:load />`, not `client:visible`.
+- OGF host repo has build-only CI on `master`; this GenCreator repo now has a Node 24 source CI workflow for tests and typecheck.
 
 **Integration options (CTO to decide during Development phase):**
 1. **npm workspace:** OGF and GenCreator in a monorepo workspace
@@ -112,19 +119,21 @@ database-directory.json contains:
     }
   }
 
-affiliate.ts generates tracked URLs:
+affiliate.ts currently generates tracked URLs:
   → baseUrl + ?tag={affiliateId}&utm_source=gencreator&utm_medium=research-plan&utm_campaign={recordType}
 ```
+
+Per the CRO revenue model, P0-4 needs a per-network builder because CJ programs such as Ancestry/MyHeritage/FindMyPast do not use the simple `tag=` model.
 
 ### Analytics Events
 ```
 GA4 Custom Events:
+  gencreator_form_started      — user first interacts with the form
   gencreator_plan_generated    — user completes form, plan renders
   gencreator_email_captured    — user submits email for plan delivery
   gencreator_affiliate_click   — user clicks a database link in plan
   gencreator_mission_click     — user clicks an OGF mission link in plan
   gencreator_print             — user prints/saves plan
-  gencreator_form_abandoned    — user starts form but doesn't submit (after 60s)
 ```
 ---
 

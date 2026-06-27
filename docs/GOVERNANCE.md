@@ -77,8 +77,9 @@ Greg Maxfield — Chairman of the Board
 ### Gate 1: Validation → Development
 - **Approver:** SSM CEO
 - **Required artifacts:** Finalized MVP spec (CPO), technical feasibility assessment (CTO), revenue model (CRO)
-- **Timeline:** Target May 2026
+- **Timeline:** Target May 2026; advanced by Chairman waiver on 2026-06-27
 - **Criteria:** Clear user need validated, technical approach confirmed, revenue model defined
+- **Project disposition:** Artifacts were delivered, but behavioral validation logged B1=0 sessions. Greg selected Option B on 2026-06-27, waiving the validation requirement for Gate 1 and authorizing Development kickoff with validation risk accepted.
 
 ### Gate 2: Development → Launch
 - **Approver:** Chairman (Greg Maxfield)

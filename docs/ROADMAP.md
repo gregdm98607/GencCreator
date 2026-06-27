@@ -1,7 +1,7 @@
 # GenCreator Roadmap
 
 > **Owner:** CTO (technical) / CPO (product) / CEO (gate approvals)
-> **Last updated:** 2026-05-31
+> **Last updated:** 2026-06-27
 > **Governance:** See [GOVERNANCE.md](GOVERNANCE.md) for gate approvers and escalation paths.
 
 ---
@@ -10,9 +10,9 @@
 
 | Milestone | Gate | Approver | Target | Status |
 |-----------|------|----------|--------|--------|
-| M1 — Feasibility Prototype | Internal | CTO | ~~2026-04-30~~ → 2026-06-03 | 🟢 **Complete** — all exit criteria met (Sprint 6 closed 2026-06-03); CTO feasibility signed off 2026-06-06 |
-| M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO | ~~2026-05-30~~ → **2026-06-21** | 🟢 **All 3 artifacts in** (CTO feasibility, CPO spec, CRO model — all 2026-06); awaiting validation evidence (~6/15) + CEO convening. Affiliate *approvals* still overdue (Phase 3 blocker, not gate) |
-| M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → 2026-07-31 (proposed) | ⬜ Not started (gated on M1 + M2) |
+| M1 — Feasibility Prototype | Internal | CTO | ~~2026-04-30~~ → 2026-06-03 | 🟢 **Complete** — all exit criteria met (Sprint 6 closed 2026-06-03); CTO feasibility signed off 2026-06-06; live `/gencreator/` page verified on operationgrannyfiles.com 2026-06-27 |
+| M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO / Chairman waiver | ~~2026-05-30~~ → ~~2026-06-21~~ → 2026-06-27 | 🟢 **Advanced by Chairman waiver (Option B)**. Validation B1=0, but Greg selected Option B on 2026-06-27 to waive behavioral validation and proceed. |
+| M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → 2026-07-31 | 🟡 Started via Sprint 7 Development kickoff. CI, live `/research-planner` alias, and Kit capture are done; CJ is prepared but blocked on affiliate details; beta feedback still needed later. |
 | M4 — Launch on OGF | Gate 2 (Dev→Launch) | Chairman (Greg) | Q3 2026 | ⬜ Not started |
 | M5 — 90-Day Evaluation | Gate 3 (Post-launch) | Chairman | Q4 2026 | ⬜ Not started |
 
@@ -29,7 +29,8 @@
 - [x] Knowledge base JSONs populated (record availability, strategies, databases, OGF missions)
 - [x] Plan generation algorithm implemented and unit-tested
 - [x] Full UI component tree built against OGF's "Archival Warmth" design system
-- [x] Integrated into OGF site — `/gencreator` page live in build
+- [x] Integrated into OGF site — `/gencreator` page live in build and verified publicly
+- [x] Public deployment verified — `https://www.operationgrannyfiles.com/gencreator/` returns 200 and contains the planner/island (2026-06-27)
 - [x] Visual QA complete (dev server, responsive check at 375/768/1280)
 - [x] GA4 custom events wired (5 events — see [SPRINT.md](../SPRINT.md))
 - [x] Lighthouse ≥ 90 across all categories (clean run 99/96/96/100)
@@ -39,15 +40,15 @@
 
 ---
 
-## M2 — MVP Spec Finalized + Gate 1 (re-target → 2026-06-21; data-driven Path 1)
+## M2 — MVP Spec Finalized + Gate 1 (advanced by waiver → 2026-06-27)
 
 **Goal:** Lock the MVP product definition. Get CEO authorization to leave Conception phase.
 
-> **Gate is now mechanical (Path 1).** Per CPO spec v1 (`CPO_GenCreator_MVP_Spec_v1_2026-06-02.md`), the V→D gate runs a §7.D GO / GO-WITH-FIXES / NO-GO rule against validation metrics B1–B5 from a 5–10-reader async test (window 6/1–6/14, recruitment posted 6/4). SSM CEO owns the gate.
+> **Gate history:** Path 1 validation closed with B1=0 completed sessions. CEO/CPO recommended Option A extension. Greg selected **Option B** on 2026-06-27, waiving behavioral validation and authorizing Development to proceed on Chairman confidence.
 
-**CPO deliverables:** ✅ spec DONE (v1, scope locked); 🟡 validation in flight (results ~6/15)
+**CPO deliverables:** ✅ spec DONE (v1, scope locked); ⚪ behavioral validation waived by Chairman
 - [x] Finalize MVP spec → `CPO_GenCreator_MVP_Spec_v1_2026-06-02.md` (DRAFT resolved; open questions dispositioned §10)
-- [ ] Validate concept with 5-10 OGF subscribers — async test 6/1–6/14
+- [x] Validate concept with 5-10 OGF subscribers — **waived** by Greg Option B after B1=0
 - [x] Email-gated results? → **optional capture AFTER plan renders** (value-first; Kit tag on opt-in)
 - [x] Share-plan-by-URL? → out of MVP (non-goal; V2+)
 - [x] LLM augmentation? → **static only** for MVP (rules-based, no-LLM)
@@ -61,7 +62,15 @@
 - [x] Feasibility confirmed (M1 exit = CTO sign-off on feasibility)
 - [x] Production readiness checklist (perf, a11y, error handling, analytics) — in the assessment §6
 
-**Gate 1 approval (SSM CEO):** all three deliverables reviewed → authorizes Development phase.
+**Gate 1 approval:** advanced by Chairman waiver. Record the accepted risk: no behavioral validation evidence exists.
+
+### Waiver Record (2026-06-27)
+
+1. Validation capture file exists but logged 0 sessions.
+2. CEO/CPO recommended Option A extension.
+3. Greg selected Option B: waive validation and proceed.
+4. Development may begin, but MVP scope remains locked.
+5. Beta/post-launch feedback must carry the plan-quality risk that validation would have reduced.
 
 ---
 
@@ -69,9 +78,16 @@
 
 **Goal:** Ship-quality MVP with real affiliate links, real email capture, real analytics, validated with beta users.
 
+**Sprint 7 starting scope:**
+- P0-3 Kit integration: capture implemented with dedicated Kit form `9616629`; exact generated-plan email delivery deferred/automation-dependent.
+- Route alias: OGF PR #3 is deployed; `/research-planner/` and `/gencreator/` both return 200 and the live sitemap includes both.
+- Validation fixes: apply CPO's ranked list from tester feedback; prioritize plan clarity, missing recommendations, and Mountain-West knowledge gaps.
+- P0-4 affiliate builder: CJ deep-link strategy prepared, activation waits on CRO approvals/ad IDs.
+- CI: OGF host already has a build-only GitHub Action on `master`; GenCreator source CI now runs `npm test` and `npm run typecheck` on Node 24.
+
 **Scope:**
 - Affiliate links: **CJ deep-link builder** (Ancestry/MyHeritage/FindMyPast via Commission Junction, PID 7928154) + keep Amazon `tag` model — NOT a simple ID swap (CRO model; findings.md Finding 14). Gated on CRO approvals (overdue). Telemetry prereq (CD-2026-006) likely already met by GA4 `gencreator_affiliate_click`.
-- Kit (ConvertKit) API integration (real email capture, not simulated) — tag `gencreator-plan-generated` on opt-in
+- Kit (ConvertKit) capture integration — wired to form `9616629`; confirm form/automation applies `gencreator-plan-generated`
 - Route rename → `/research-planner` (alias `/gencreator`)
 - Knowledge base enrichment: goal-specific rationales, record-specific tips; Mountain-West depth (validation refinement list)
 - Error states + empty states polished

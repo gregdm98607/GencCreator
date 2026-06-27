@@ -1,46 +1,51 @@
-# Current Sprint — MVP Hardening (re-baselined)
+# Current Sprint — Sprint 7 Development Kickoff
 
-> **Sprint #:** 6 (re-baseline of the lapsed Sprint 5 — same scope, fresh window)
-> **Window:** 2026-05-31 → 2026-06-12 (provisional ~2 wk; confirm cadence with Greg)
-> **Sprint goal:** Close the M1 Feasibility Prototype exit criteria so CTO can sign feasibility into the Gate 1 packet.
-> **Last updated:** 2026-06-03 — **all 7 must-land items done** (P0-1/P0-5/P0-6 closed this session). Pending: commit the 2 a11y fixes; CTO feasibility sign-off.
-
-> ⚠️ **Sprint 5 (2026-04-22 → 04-30) lapsed** — closed unexecuted: 0 of 7 must-land items done, 0 commits in window. Full scope carried into Sprint 6 unchanged. See [progress.md](progress.md) Session 6.
+> **Sprint #:** 7
+> **Window:** 2026-06-27 → 2026-07-14
+> **Sprint goal:** Start MVP Development under Greg's Option B validation waiver: preserve the working prototype, add source CI, and begin launch-readiness items that are already scoped.
+> **Last updated:** 2026-06-27
 
 ---
 
-## Sprint Goal (one sentence)
+## Current Gate Posture
 
-**Ship a `/gencreator` page on OGF that passes visual QA, GA4, Lighthouse 90+, and WCAG 2.1 AA — so the CTO feasibility sign-off for Gate 1 is unblocked.**
+The 2026-06-21 V→D gate did **not** advance under the mechanical validation rule. Vault evidence found 2026-06-27:
+
+- `GenCreator_Validation_Results_2026-06.md` exists, but has **0 logged sessions**.
+- `CEO_GenCreator_VtoD_GateFraming_2026-06-15.md` records verdict: **HOLD — B1 criterion not met**.
+- `CPO_GenCreator_ExtensionBrief_2026-06-15.md` packages Options A/B/C and recommends **Option A: extend validation to early/mid July**.
+- Greg selected **Option B** on 2026-06-27: waive behavioral validation and proceed on Chairman confidence.
+
+**Working disposition:** Development may begin under Chairman waiver. The B1=0 validation gap remains an accepted risk.
 
 ---
 
-## In Scope This Sprint
+## Sprint Goal
 
-Pulled from [BACKLOG.md](BACKLOG.md) P0 items the CTO can close without external dependencies. Ordered by execution sequence — baseline check first, then the unblocked pure-code work, then the audit/instrumentation items.
+**Move from recovery to MVP Development kickoff without expanding scope: CI, route alias, Kit planning/implementation, and affiliate-builder prep.**
 
-### Must land
-- [x] **[P0-0]** Baseline smoke check — `npm test` (expect 25 green) in `C:\Dev\gencreator` + `astro build` green in `C:\Dev\ogf-site`. Confirms nothing rotted in the 39-day gap before building on it.
-- [x] **[P0-10]** `buildRationale()` — goal-specific prose (stub removed; goal-aware + high-value overrides, +tests)
-- [x] **[P0-11]** `buildTips()` — record-specific tips (stub removed; per-record + time-sensitive, +tests)
-- [x] **[P0-1]** Visual QA — desktop/tablet/mobile + full flow walk all pass (2026-06-03; `qa/sprint6/QA_RESULTS.md`)
-- [x] **[P0-2]** GA4 custom events wired (via `lib/analytics.ts` → global gtag already in `BaseHead.astro`):
-  - `gencreator_plan_generated` (ancestor name hash, goal, step count)
-  - `gencreator_email_captured`
-  - `gencreator_affiliate_click` (database name, record type)
-  - `gencreator_mission_click`
-  - `gencreator_print`
-- [x] **[P0-5]** Lighthouse ≥ 90 — clean run **99/96/96/100** (all ≥90). OGF-global font/GA4 render-blocking noted for production hardening (escalate).
-- [x] **[P0-6]** WCAG 2.1 AA — GenCreator axe-clean after 2 fixes (badge contrast, aria roles); keyboard/focus/labels/structure verified. OGF footer contrast = escalate to OGF.
+---
 
-### Stretch
-- [ ] **[P0-3]** ConvertKit API integration (if API key is pulled from the vault this sprint)
-- [ ] **[P1-6]** Error telemetry decision — pick tool, defer wire-up if not trivial
+## Must Land
 
-### Explicitly NOT in this sprint
-- P0-4 (real affiliate IDs) — blocked on CRO signup status
-- P0-7 / P0-8 / P0-9 (CPO & CRO Gate 1 artifacts) — not CTO work; **now overdue** (see ROADMAP M2 slip)
-- All P1/P2/P3 items
+- [x] **[S7-0] Recover missing gate evidence** — locate and consume vault validation/gate artifacts; record HOLD status locally.
+- [x] **[S7-1] Create Gate 1 recovery packet** — summarize evidence and decision options in `docs/GATE1_RECOVERY_PACKET.md`.
+- [x] **[S7-2] Greg Option A/B/C decision recorded** — Option B selected 2026-06-27.
+- [x] **[S7-3] Waiver disposition recorded in repo docs** — roadmap/task plan/progress/governance mark Gate 1 advanced by Chairman waiver; external CEO administrative filing remains a follow-up.
+- [x] **[P3-6] GenCreator source CI** — GitHub Action added for `npm test` + `npm run typecheck`; local commands pass.
+- [x] **[P0-12] `/research-planner` route alias** — OGF now builds `/research-planner/` and preserves `/gencreator/`; local preview verified both routes 200 + sitemap entries.
+- [x] **[P0-3] Kit capture integration** — `EmailCapture.tsx` posts to dedicated Kit form `9616629`; exact plan-email delivery remains deferred/automation-dependent.
+
+## Conditional / Blocked
+
+- [x] **[P0-4] CJ affiliate builder strategy** — network/data-model strategy documented in `docs/AFFILIATE_LINK_STRATEGY.md`; activation blocked on affiliate approvals and network IDs/ad IDs.
+- [ ] **Validation-driven fixes** — deferred until beta/user feedback exists.
+
+## Explicitly Not In Sprint
+
+- Paid tier, Stripe, saved plans, accounts, LLM augmentation, GEDCOM import.
+- Any public pricing communication. Pricing is routed separately through SSS CEO/Chairman and is Q3/V2, not MVP Gate 1.
+- Any product-scope expansion justified by the waiver. The waiver advances timing; it does not expand MVP scope.
 
 ---
 
@@ -48,54 +53,34 @@ Pulled from [BACKLOG.md](BACKLOG.md) P0 items the CTO can close without external
 
 | Date | Owner | What changed | Next |
 |------|-------|--------------|------|
-| 2026-04-22 | CTO | Consolidated planning: created ROADMAP.md, BACKLOG.md, SPRINT.md. Updated task_plan.md structure. | Visual QA + GA4 events |
-| 2026-04-23 → 05-30 | — | **(no activity — Sprint 5 lapsed, 0 commits)** | — |
-| 2026-05-31 | CTO | Re-baseline: closed lapsed Sprint 5, opened Sprint 6 (same scope, P0-0 smoke check added), slipped ROADMAP M1/M2/M3 targets, updated task_plan + progress. | P0-0 smoke check → P0-10/P0-11 |
-| 2026-05-31 | CTO | Sprint 6 P0-0 **PASSED** — gencreator 25/25 tests + typecheck clean; OGF `astro build` green (11 pages, /gencreator/ present). | P0-10 / P0-11 enrichment |
-| 2026-05-31 | CTO | **P0-10 + P0-11 done** — enriched `buildRationale()` (goal-aware + overrides) & `buildTips()` (record + time-specific); +5 tests (**30 green**), typecheck clean; synced `planner.ts` → OGF + rebuilt green. | P0-2 GA4; then P0-1/P0-5/P0-6 (browser tooling) |
-| 2026-05-31 | CTO | **P0-2 done** — 5 GA4 events via new `lib/analytics.ts` (`track()` + `hashName()`, no-PII); wired into GenCreator/ResearchPlan/ResearchStep/EmailCapture; +6 tests (**36 green**); synced to OGF (6 components byte-identical mod paths) + rebuilt green. | P0-1 / P0-5 / P0-6 (need dev server + browser/Lighthouse/axe) |
-| 2026-06-03 | CTO | **P0-1/P0-5/P0-6 done** — QA on OGF prod build via Preview MCP + Lighthouse + axe. Visual QA pass (3 breakpoints + flow). Lighthouse clean **99/96/96/100**. axe found 2 GenCreator a11y defects → **fixed** (badge contrast `--gc-amber`→#7A5900 = 5.82:1; `role` on gc-plan/gc-databases), synced to OGF + rebuilt + re-verified (0 violations). **All 7 must-land done.** Escalated OGF footer-contrast + font/GA4 perf. | Commit 2 a11y fixes (both repos); CTO feasibility sign-off → Gate 1 |
-
-*Append rows as each session closes. Keep it terse.*
+| 2026-06-27 | CTO | Sprint 7 opened. Vault recovery found formal HOLD: validation B1=0; CEO/CPO recommend Option A extension; no Greg A/B/C call found. | Create recovery packet + add source CI |
+| 2026-06-27 | Greg | Chairman selected **Option B**: waive behavioral validation and proceed. | Record waiver disposition + begin Sprint 7 Development kickoff |
+| 2026-06-27 | CTO | Filed CEO waiver disposition in vault, added OGF `/research-planner/` route, documented Kit blocker, documented CJ strategy. | Verify builds/tests + update handoff docs |
+| 2026-06-27 | Greg/CTO | Greg supplied Kit form `9616629`; CTO wired GenCreator email capture to the dedicated Kit endpoint and synced OGF. | Verify + deploy |
+| 2026-06-27 | CTO | Verified OGF PR #3 is deployed: `/research-planner/` and `/gencreator/` both return 200; live sitemap includes both routes. GenCreator source tests/typecheck pass locally. | Confirm Kit tag `gencreator-plan-generated`; run one seed signup only after Greg confirms test email |
 
 ---
 
-## Definition of Done (sprint-level)
+## Definition of Done
 
-1. All "Must land" items checked.
-2. `/gencreator` page on OGF passes Lighthouse ≥ 90 on all four categories (recorded in progress.md).
-3. GA4 events firing (verified via GA4 DebugView or browser devtools).
-4. 25 unit tests still pass in `C:\Dev\gencreator`.
-5. OGF build still green (`astro build`).
-6. Task_plan.md + progress.md updated.
-7. Git committed in both repos with clear messages.
+1. Gate 1 status is no longer ambiguous in repo docs.
+2. Greg's Option B waiver is recorded.
+3. GenCreator source repo CI exists and passes locally verified commands.
+4. `/research-planner` route plan is implemented or explicitly queued with reason.
+5. Kit integration is implemented or blocked with precise credential/tag requirement.
+6. `task_plan.md`, `findings.md`, and `progress.md` reflect Sprint 7 Development state.
 
 ---
 
-## Risks This Sprint
+## Risks
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| 39-day gap left dependencies/build broken | M | M | P0-0 smoke check **first** — don't build on an unverified baseline |
-| Schedule keeps slipping (Sprint 5 already lapsed) | M | H | Provisional 2-wk window; if cadence is uncertain, scope down to P0-0 + P0-10 + P0-11 (pure-code, no deps) as the minimum viable session |
-| ConvertKit API key not found / account issue | M | Low (stretch only) | Leave EmailCapture.tsx simulated; log as P0-3 still open |
-| Lighthouse flunks on CLS or LCP | L | M | Preact island is small; if it flunks, investigate font loading and CSS var fallbacks |
-| A11y gaps found late | M | M | Run axe-core early, not end of sprint |
-| Scope creep from knowledge base enrichment | H | M | Hard cap: rationales + tips only this sprint, not new record types |
+| Waiver hides plan-quality risk | M | H | Keep beta feedback and post-launch quality metrics explicit; do not treat B1=0 as positive evidence |
+| CTO expands scope too early | M | M | Keep Sprint 7 to CI, route alias, Kit, and affiliate prep only |
+| Route changes confuse existing testers | L | M | Keep `/gencreator/`; add `/research-planner/` only as alias/redirect if approved |
+| Affiliate approvals still blocked | H | M | Treat P0-4 as design-ready but activation-blocked |
 
 ---
 
-## Next Sprint Preview (Sprint 7)
-
-Tentative scope — confirm in sprint planning:
-- CPO concept validation sessions (if CPO is ready) — **overdue Gate 1 blocker**
-- ConvertKit if it slipped
-- Real affiliate ID swap (if CRO cleared programs)
-- Copy polish pass (P1-8)
-- E2E Playwright spike (P3-3) — probably defer
-
-Sprint 7 may pivot to support Gate 1 packet assembly if CPO/CRO artifacts land.
-
----
-
-*Sprint maintained by CTO. Review end-of-sprint, update task_plan.md + progress.md, commit.*
+*Sprint maintained by CTO. Review after Greg Option call or by 2026-07-05, whichever comes first.*

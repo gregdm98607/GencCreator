@@ -1,7 +1,7 @@
 # GenCreator Backlog
 
 > **Purpose:** Prioritized list of work not yet committed to a sprint. Anything scope-creepy or "nice-to-have" lives here, not in SPRINT.md.
-> **Last updated:** 2026-05-31
+> **Last updated:** 2026-06-27
 > **Sizing:** XS (<1hr) · S (1–4hr) · M (half-day to day) · L (multi-day) · XL (week+)
 
 **Rules:**
@@ -15,17 +15,18 @@
 
 | ID | Title | Size | Owner | Notes |
 |----|-------|------|-------|-------|
-| P0-1 | Visual QA on `/gencreator` (desktop + mobile + print) | S | CTO | Pulled into current sprint |
-| P0-2 | GA4 custom events (5 events — see SPRINT.md) | S | CTO | Pulled into current sprint |
-| P0-3 | Kit (ConvertKit) API integration (real email send) | M | CTO | Depends on API key from vault; tag `gencreator-plan-generated` on opt-in |
-| P0-4 | Real affiliate links — **CJ deep-link builder** (not just an ID swap) | M | CTO+CRO | 🔒 Blocked on CRO approvals. Ancestry/MyHeritage/FindMyPast via Commission Junction (PID 7928154) need redirect URLs; `affiliate.ts` is Amazon `tag=` only. Re-sized S→M (Finding 14) |
-| P0-5 | Lighthouse ≥ 90 across all categories | S | CTO | After P0-1 |
-| P0-6 | WCAG 2.1 AA audit + fixes | M | CTO | Target-audience skew 35–70 makes this load-bearing |
+| P0-1 | Visual QA on `/gencreator` (desktop + mobile + print) | S | CTO | ✅ **DONE** — Sprint 6 QA pass, see `qa/sprint6/QA_RESULTS.md` |
+| P0-2 | GA4 custom events (5 events — see SPRINT.md) | S | CTO | ✅ **DONE** — expanded to 6 events including `gencreator_form_started` |
+| P0-3 | Kit (ConvertKit) capture integration | M | CTO+CRO | ✅ Implemented with dedicated Kit form `9616629`; captures/subscribes after plan generation. Exact generated-plan email remains deferred/automation-dependent |
+| P0-4 | Real affiliate links — **CJ deep-link builder** (not just an ID swap) | M | CTO+CRO | 🟡 Strategy complete in `docs/AFFILIATE_LINK_STRATEGY.md`; activation blocked on CRO approvals/ad IDs. Ancestry/MyHeritage/FindMyPast via Commission Junction (PID 7928154) need redirect URLs |
+| P0-5 | Lighthouse ≥ 90 across all categories | S | CTO | ✅ **DONE** — clean run 99/96/96/100 |
+| P0-6 | WCAG 2.1 AA audit + fixes | M | CTO | ✅ **DONE** — GenCreator UI axe-clean; OGF footer contrast remains OGF-owned |
 | P0-7 | MVP spec finalized | M | CPO | ✅ **DONE** — CPO_GenCreator_MVP_Spec_v1_2026-06-02 (Finding 13) |
 | P0-8 | Revenue model doc | M | CRO | ✅ **DONE** — GenCreator_Revenue_Model_2026-06-06 (Finding 14) |
-| P0-9 | Concept validation with 5–10 OGF subscribers | M | CPO | 🟡 **IN FLIGHT** — async test 6/1–6/14; recruitment posted 6/4; results ~6/15 |
-| P0-10 | Enrich `buildRationale()` — goal-specific prose | S | CTO | Currently stubbed |
-| P0-11 | Enrich `buildTips()` — record-specific tips | S | CTO | Currently stubbed |
+| P0-9 | Concept validation with 5–10 OGF subscribers | M | CPO/Greg | ⚪ **WAIVED FOR GATE 1** — B1=0, but Greg selected Option B on 2026-06-27. Keep beta/post-launch feedback as risk mitigation. |
+| P0-10 | Enrich `buildRationale()` — goal-specific prose | S | CTO | ✅ **DONE** — enriched and tested |
+| P0-11 | Enrich `buildTips()` — record-specific tips | S | CTO | ✅ **DONE** — enriched and tested |
+| P0-12 | `/research-planner` route alias/redirect | S | CTO+CPO | ✅ Implemented and deployed in OGF PR #3; live checks on 2026-06-27 returned 200 for `/research-planner/` and `/gencreator/`, and `sitemap-0.xml` includes both. |
 
 ## P1 — High Value, Post-MVP
 
@@ -39,6 +40,7 @@
 | P1-6 | Error telemetry (Sentry or equivalent) | S | Production readiness |
 | P1-7 | Rate limiting on email endpoint | S | Abuse prevention |
 | P1-8 | Copy polish pass (CPO) | S | Tone, CTAs, disclaimers |
+| P1-9 | Launch-readiness checklist / go-live packet | S | Consolidate validation, Kit, affiliate status, route, copy, QA evidence, and owner sign-offs before Gate 2 |
 
 ## P2 — Feature Expansion
 
@@ -62,6 +64,7 @@
 | P3-3 | E2E tests (Playwright) against deployed preview | M | Currently only unit tests |
 | P3-4 | Visual regression tests (Percy or equiv.) | M | |
 | P3-5 | Knowledge base integrity CI check | S | Validate JSON schema + ID refs |
+| P3-6 | GenCreator standalone CI | S | ✅ **DONE** — `.github/workflows/gencreator-check.yml` runs Node 24, `npm test`, and `npm run typecheck` |
 
 ## P4 — Strategic / Post-Gate-3 (Standalone Evaluation)
 
