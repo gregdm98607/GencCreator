@@ -1,7 +1,7 @@
 # GenCreator Kit Integration Plan
 
 > **Status:** Implemented with dedicated Kit form `9616629`
-> **Last updated:** 2026-06-27
+> **Last updated:** 2026-07-21
 
 ## Decision
 
@@ -37,6 +37,12 @@ Still confirm in Kit:
 - The live sitemap index points to `https://operationgrannyfiles.com/sitemap-0.xml`, which lists both planner routes.
 - Seed signup has **not** been run yet. Run only one live seed after Greg confirms the test email, to avoid duplicate junk records.
 - Kit admin still needs to confirm form `9616629` applies tag `gencreator-plan-generated`.
+
+Sprint 8 operational decision:
+
+- Do not run more than one live seed signup.
+- Do not run the seed signup until Greg confirms the exact test email.
+- Treat Kit as launch-blocked until both the tag confirmation and seed result are recorded.
 
 ## Implementation Shape
 

@@ -1,51 +1,44 @@
-# Current Sprint — Sprint 7 Development Kickoff
+# Current Sprint — Sprint 8 Launch Readiness + Beta Proof
 
-> **Sprint #:** 7
-> **Window:** 2026-06-27 → 2026-07-14
-> **Sprint goal:** Start MVP Development under Greg's Option B validation waiver: preserve the working prototype, add source CI, and begin launch-readiness items that are already scoped.
-> **Last updated:** 2026-06-27
-
----
-
-## Current Gate Posture
-
-The 2026-06-21 V→D gate did **not** advance under the mechanical validation rule. Vault evidence found 2026-06-27:
-
-- `GenCreator_Validation_Results_2026-06.md` exists, but has **0 logged sessions**.
-- `CEO_GenCreator_VtoD_GateFraming_2026-06-15.md` records verdict: **HOLD — B1 criterion not met**.
-- `CPO_GenCreator_ExtensionBrief_2026-06-15.md` packages Options A/B/C and recommends **Option A: extend validation to early/mid July**.
-- Greg selected **Option B** on 2026-06-27: waive behavioral validation and proceed on Chairman confidence.
-
-**Working disposition:** Development may begin under Chairman waiver. The B1=0 validation gap remains an accepted risk.
+> **Sprint #:** 8
+> **Window:** 2026-07-21 → 2026-08-04
+> **Sprint goal:** Turn the deployed MVP into a Gate 2-ready launch candidate by proving the live capture funnel, collecting beta feedback, and assembling launch-readiness evidence without expanding MVP scope.
+> **Last updated:** 2026-07-21
 
 ---
 
-## Sprint Goal
+## Decision
 
-**Move from recovery to MVP Development kickoff without expanding scope: CI, route alias, Kit planning/implementation, and affiliate-builder prep.**
+Sprint 8 is a **launch-readiness sprint**, not a feature-expansion sprint.
+
+Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI added, `/research-planner/` deployed while preserving `/gencreator/`, Kit capture wired to form `9616629`, and CJ affiliate strategy documented. The remaining risk is no longer "can we build it?" It is "can we prove the live MVP is ready enough for beta/launch despite waived validation?"
+
+**Selected focus:** Kit operational proof + beta feedback + Gate 2 evidence.
+
+**Deferred on purpose:** paid tier, Stripe, accounts, saved plans, LLM, GEDCOM, public pricing, standalone deployment, and CJ affiliate activation without CRO approvals/ad IDs.
 
 ---
 
 ## Must Land
 
-- [x] **[S7-0] Recover missing gate evidence** — locate and consume vault validation/gate artifacts; record HOLD status locally.
-- [x] **[S7-1] Create Gate 1 recovery packet** — summarize evidence and decision options in `docs/GATE1_RECOVERY_PACKET.md`.
-- [x] **[S7-2] Greg Option A/B/C decision recorded** — Option B selected 2026-06-27.
-- [x] **[S7-3] Waiver disposition recorded in repo docs** — roadmap/task plan/progress/governance mark Gate 1 advanced by Chairman waiver; external CEO administrative filing remains a follow-up.
-- [x] **[P3-6] GenCreator source CI** — GitHub Action added for `npm test` + `npm run typecheck`; local commands pass.
-- [x] **[P0-12] `/research-planner` route alias** — OGF now builds `/research-planner/` and preserves `/gencreator/`; local preview verified both routes 200 + sitemap entries.
-- [x] **[P0-3] Kit capture integration** — `EmailCapture.tsx` posts to dedicated Kit form `9616629`; exact plan-email delivery remains deferred/automation-dependent.
+- [ ] **[S8-1] Kit operational proof** — confirm Kit form `9616629` applies tag `gencreator-plan-generated`; run exactly one live seed signup after Greg confirms the test email; record the result in `docs/KIT_INTEGRATION_PLAN.md`.
+- [ ] **[S8-2] Beta packet** — prepare a short beta tester prompt, feedback questions, and tracking method for 5-10 OGF users; keep it focused on plan clarity and next-action usefulness.
+- [ ] **[S8-3] Deployed smoke check** — verify live `/research-planner/` and `/gencreator/` still render the planner, produce a plan, expose print/save, and keep the sitemap entries.
+- [ ] **[S8-4] Launch-readiness checklist** — create and maintain `docs/LAUNCH_READINESS_CHECKLIST.md` with route, Kit, analytics, affiliate, QA, beta, copy, and approval evidence.
+- [ ] **[S8-5] Copy/FTC review queue** — identify the exact UI copy and affiliate disclosure lines that need CPO/CRO sign-off before Gate 2.
+- [ ] **[S8-6] Source/host parity check** — confirm GenCreator source files still match the deployed OGF implementation where expected, or document intentional differences.
 
 ## Conditional / Blocked
 
-- [x] **[P0-4] CJ affiliate builder strategy** — network/data-model strategy documented in `docs/AFFILIATE_LINK_STRATEGY.md`; activation blocked on affiliate approvals and network IDs/ad IDs.
-- [ ] **Validation-driven fixes** — deferred until beta/user feedback exists.
+- [ ] **CJ affiliate activation** — blocked until CRO/Greg provide advertiser approvals and network/ad/link IDs.
+- [ ] **Validation-driven fixes** — only implement if beta feedback identifies clear P0/P1 issues inside existing MVP scope.
 
 ## Explicitly Not In Sprint
 
 - Paid tier, Stripe, saved plans, accounts, LLM augmentation, GEDCOM import.
-- Any public pricing communication. Pricing is routed separately through SSS CEO/Chairman and is Q3/V2, not MVP Gate 1.
-- Any product-scope expansion justified by the waiver. The waiver advances timing; it does not expand MVP scope.
+- Standalone app migration, new domain, or iframe deployment.
+- Public pricing communication.
+- New genealogy knowledge-base expansion beyond beta-identified bug fixes.
 
 ---
 
@@ -53,22 +46,19 @@ The 2026-06-21 V→D gate did **not** advance under the mechanical validation ru
 
 | Date | Owner | What changed | Next |
 |------|-------|--------------|------|
-| 2026-06-27 | CTO | Sprint 7 opened. Vault recovery found formal HOLD: validation B1=0; CEO/CPO recommend Option A extension; no Greg A/B/C call found. | Create recovery packet + add source CI |
-| 2026-06-27 | Greg | Chairman selected **Option B**: waive behavioral validation and proceed. | Record waiver disposition + begin Sprint 7 Development kickoff |
-| 2026-06-27 | CTO | Filed CEO waiver disposition in vault, added OGF `/research-planner/` route, documented Kit blocker, documented CJ strategy. | Verify builds/tests + update handoff docs |
-| 2026-06-27 | Greg/CTO | Greg supplied Kit form `9616629`; CTO wired GenCreator email capture to the dedicated Kit endpoint and synced OGF. | Verify + deploy |
-| 2026-06-27 | CTO | Verified OGF PR #3 is deployed: `/research-planner/` and `/gencreator/` both return 200; live sitemap includes both routes. GenCreator source tests/typecheck pass locally. | Confirm Kit tag `gencreator-plan-generated`; run one seed signup only after Greg confirms test email |
+| 2026-07-21 | CTO/Greg | Sprint 8 selected as Launch Readiness + Beta Proof. Sprint 7 is treated as closed; live MVP exists, but Kit seed proof and beta evidence remain open. | Create launch-readiness checklist; confirm Kit seed email; prepare beta packet |
+| 2026-07-21 | CTO | Production route/sitemap check passed: both planner routes return 200 and `sitemap-0.xml` lists both. | Run interactive generated-plan smoke; confirm Kit tag/test email |
 
 ---
 
 ## Definition of Done
 
-1. Gate 1 status is no longer ambiguous in repo docs.
-2. Greg's Option B waiver is recorded.
-3. GenCreator source repo CI exists and passes locally verified commands.
-4. `/research-planner` route plan is implemented or explicitly queued with reason.
-5. Kit integration is implemented or blocked with precise credential/tag requirement.
-6. `task_plan.md`, `findings.md`, and `progress.md` reflect Sprint 7 Development state.
+1. Kit form/tag behavior is confirmed or precisely blocked.
+2. One live seed signup is completed and recorded, or explicitly deferred by Greg.
+3. Beta packet is ready to send to 5-10 OGF users.
+4. Live deployed smoke check is recorded for both planner routes.
+5. Launch-readiness checklist exists and shows current Gate 2 blockers.
+6. No out-of-scope paid/account/LLM/standalone work is introduced.
 
 ---
 
@@ -76,11 +66,11 @@ The 2026-06-21 V→D gate did **not** advance under the mechanical validation ru
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| Waiver hides plan-quality risk | M | H | Keep beta feedback and post-launch quality metrics explicit; do not treat B1=0 as positive evidence |
-| CTO expands scope too early | M | M | Keep Sprint 7 to CI, route alias, Kit, and affiliate prep only |
-| Route changes confuse existing testers | L | M | Keep `/gencreator/`; add `/research-planner/` only as alias/redirect if approved |
-| Affiliate approvals still blocked | H | M | Treat P0-4 as design-ready but activation-blocked |
+| Kit form accepts signups but does not apply the intended tag | M | H | Confirm in Kit admin before treating lead capture as launch-ready |
+| Waived validation creates plan-quality blind spots | H | H | Use beta packet to collect direct quality feedback before Gate 2 |
+| Affiliate approvals remain blocked | H | M | Launch can proceed with direct/free links; monetized links activate later |
+| Sprint drifts into V2 ideas | M | M | Keep every task tied to Gate 2 evidence or beta-critical fixes |
 
 ---
 
-*Sprint maintained by CTO. Review after Greg Option call or by 2026-07-05, whichever comes first.*
+*Sprint maintained by CTO. Review by 2026-08-04 or after beta evidence arrives, whichever comes first.*
