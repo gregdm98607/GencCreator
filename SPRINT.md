@@ -3,7 +3,7 @@
 > **Sprint #:** 8
 > **Window:** 2026-07-21 → 2026-08-04
 > **Sprint goal:** Turn the deployed MVP into a Gate 2-ready launch candidate by proving the live capture funnel, collecting beta feedback, and assembling launch-readiness evidence without expanding MVP scope.
-> **Last updated:** 2026-07-21
+> **Last updated:** 2026-07-22
 
 ---
 
@@ -23,10 +23,10 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 
 - [ ] **[S8-1] Kit operational proof** — confirm Kit form `9616629` applies tag `gencreator-plan-generated`; run exactly one live seed signup after Greg confirms the test email; record the result in `docs/KIT_INTEGRATION_PLAN.md`.
 - [x] **[S8-2] Beta packet** — prepare a short beta tester prompt, feedback questions, and tracking method for 5-10 OGF users; keep it focused on plan clarity and next-action usefulness.
-- [ ] **[S8-3] Deployed smoke check** — verify live `/research-planner/` and `/gencreator/` still render the planner, produce a plan, expose print/save, and keep the sitemap entries.
-- [ ] **[S8-4] Launch-readiness checklist** — create and maintain `docs/LAUNCH_READINESS_CHECKLIST.md` with route, Kit, analytics, affiliate, QA, beta, copy, and approval evidence.
-- [ ] **[S8-5] Copy/FTC review queue** — identify the exact UI copy and affiliate disclosure lines that need CPO/CRO sign-off before Gate 2.
-- [ ] **[S8-6] Source/host parity check** — confirm GenCreator source files still match the deployed OGF implementation where expected, or document intentional differences.
+- [x] **[S8-3] Deployed smoke check** — verified 2026-07-22: both live routes rendered the form and generated a 10-step plan for the same test case; the primary route's Print / Save as PDF control was enabled and executed without page error/navigation; the alias exposed the same enabled control; route/sitemap HTTP evidence remains recorded from 2026-07-21.
+- [x] **[S8-4] Launch-readiness checklist** — `docs/LAUNCH_READINESS_CHECKLIST.md` now tracks route, Kit, analytics, affiliate, QA, beta, copy, approval, smoke, and parity evidence; continue maintaining it as Kit/beta results arrive.
+- [x] **[S8-5] Copy/FTC review queue** — exact CPO/CRO review surface recorded in `docs/LAUNCH_READINESS_CHECKLIST.md`; no copy was changed without sign-off.
+- [x] **[S8-6] Source/host parity check** — verified 2026-07-22: source and OGF logic/data/CSS match after line-ending normalization; component diffs are limited to intentional OGF-relative import paths.
 
 ## Conditional / Blocked
 
@@ -49,6 +49,8 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 | 2026-07-21 | CTO/Greg | Sprint 8 selected as Launch Readiness + Beta Proof. Sprint 7 is treated as closed; live MVP exists, but Kit seed proof and beta evidence remain open. | Create launch-readiness checklist; confirm Kit seed email; prepare beta packet |
 | 2026-07-21 | CTO | Production route/sitemap check passed: both planner routes return 200 and `sitemap-0.xml` lists both. | Run interactive generated-plan smoke; confirm Kit tag/test email |
 | 2026-07-21 | CTO | Created send-ready beta test packet in `docs/BETA_TEST_PACKET.md`. | Send to 5-10 OGF testers; collect responses in tracking table |
+| 2026-07-22 | CTO | Interactive production smoke passed on both routes using a Utah parent-finding scenario; primary route generated 10 steps and executed the enabled print/save control without page error or navigation; alias generated the same plan shape and exposed the enabled print/save control. | Confirm Kit tag/test email; send beta packet |
+| 2026-07-22 | CTO | Source/host parity passed after line-ending normalization. All shared logic, data, analytics, utilities, and CSS match; component differences are intentional import-path rewrites. Copy/FTC sign-off surface queued. All 37 tests and typecheck passed. | Commit focused evidence update; then confirm Kit and collect beta responses |
 
 ---
 
