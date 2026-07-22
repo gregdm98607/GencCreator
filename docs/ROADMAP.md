@@ -86,7 +86,7 @@
 
 **Sprint 8 focus:**
 - Kit operational proof: confirm tag `gencreator-plan-generated` and run one live seed signup after Greg confirms test email.
-- Beta proof: prepare/send focused beta packet and collect 5-10 responses or record the Chairman-approved equivalent.
+- Beta proof: packet ready in `docs/BETA_TEST_PACKET.md`; send it and collect 5-10 responses or record the Chairman-approved equivalent.
 - Launch-readiness evidence: maintain `docs/LAUNCH_READINESS_CHECKLIST.md` for route, sitemap, planner flow, print/save, analytics, affiliate disclosure, and approval status.
 - Validation fixes: apply only clear beta-identified P0/P1 issues inside locked MVP scope.
 

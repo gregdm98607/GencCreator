@@ -22,7 +22,7 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 ## Must Land
 
 - [ ] **[S8-1] Kit operational proof** — confirm Kit form `9616629` applies tag `gencreator-plan-generated`; run exactly one live seed signup after Greg confirms the test email; record the result in `docs/KIT_INTEGRATION_PLAN.md`.
-- [ ] **[S8-2] Beta packet** — prepare a short beta tester prompt, feedback questions, and tracking method for 5-10 OGF users; keep it focused on plan clarity and next-action usefulness.
+- [x] **[S8-2] Beta packet** — prepare a short beta tester prompt, feedback questions, and tracking method for 5-10 OGF users; keep it focused on plan clarity and next-action usefulness.
 - [ ] **[S8-3] Deployed smoke check** — verify live `/research-planner/` and `/gencreator/` still render the planner, produce a plan, expose print/save, and keep the sitemap entries.
 - [ ] **[S8-4] Launch-readiness checklist** — create and maintain `docs/LAUNCH_READINESS_CHECKLIST.md` with route, Kit, analytics, affiliate, QA, beta, copy, and approval evidence.
 - [ ] **[S8-5] Copy/FTC review queue** — identify the exact UI copy and affiliate disclosure lines that need CPO/CRO sign-off before Gate 2.
@@ -48,6 +48,7 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 |------|-------|--------------|------|
 | 2026-07-21 | CTO/Greg | Sprint 8 selected as Launch Readiness + Beta Proof. Sprint 7 is treated as closed; live MVP exists, but Kit seed proof and beta evidence remain open. | Create launch-readiness checklist; confirm Kit seed email; prepare beta packet |
 | 2026-07-21 | CTO | Production route/sitemap check passed: both planner routes return 200 and `sitemap-0.xml` lists both. | Run interactive generated-plan smoke; confirm Kit tag/test email |
+| 2026-07-21 | CTO | Created send-ready beta test packet in `docs/BETA_TEST_PACKET.md`. | Send to 5-10 OGF testers; collect responses in tracking table |
 
 ---
 
