@@ -27,6 +27,7 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 - [x] **[S8-4] Launch-readiness checklist** — `docs/LAUNCH_READINESS_CHECKLIST.md` now tracks route, Kit, analytics, affiliate, QA, beta, copy, approval, smoke, and parity evidence; continue maintaining it as Kit/beta results arrive.
 - [x] **[S8-5] Copy/FTC review queue** — exact CPO/CRO review surface recorded in `docs/LAUNCH_READINESS_CHECKLIST.md`; no copy was changed without sign-off.
 - [x] **[S8-6] Source/host parity check** — verified 2026-07-22: source and OGF logic/data/CSS match after line-ending normalization; component diffs are limited to intentional OGF-relative import paths.
+- [x] **[S8-7] Analytics delivery hardening** — live interaction re-confirmed plan generation without runtime errors; source wiring covers all six expected no-PII events. Added a tested `dataLayer` fallback for Astro hosts where GA initializes the data layer without exposing `window.gtag`; synced the shared helper to OGF for deployment.
 
 ## Conditional / Blocked
 
@@ -51,6 +52,7 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 | 2026-07-21 | CTO | Created send-ready beta test packet in `docs/BETA_TEST_PACKET.md`. | Send to 5-10 OGF testers; collect responses in tracking table |
 | 2026-07-22 | CTO | Interactive production smoke passed on both routes using a Utah parent-finding scenario; primary route generated 10 steps and executed the enabled print/save control without page error or navigation; alias generated the same plan shape and exposed the enabled print/save control. | Confirm Kit tag/test email; send beta packet |
 | 2026-07-22 | CTO | Source/host parity passed after line-ending normalization. All shared logic, data, analytics, utilities, and CSS match; component differences are intentional import-path rewrites. Copy/FTC sign-off surface queued. All 37 tests and typecheck passed. | Commit focused evidence update; then confirm Kit and collect beta responses |
+| 2026-07-22 | CTO | Live analytics smoke generated another 10-step plan with no runtime warnings/errors. The browser exposed the GA script but not a callable `window.gtag`, so the shared tracker was hardened with a tested `dataLayer` fallback and synced to OGF. GenCreator: 38 tests + typecheck pass; OGF: 43-page build pass. | Deploy OGF analytics fallback; verify events in GA4 DebugView/Realtime; confirm Kit tag/test email |
 
 ---
 

@@ -20,7 +20,7 @@ Current recommendation: **not yet Gate 2-ready** until Kit operational proof and
 | Print/save | Print Plan control works on generated plan | Verified 2026-07-22 | Primary route control was visible, enabled, and executed without page error/navigation; alias exposed the same enabled control. OS print-dialog completion remains a user/browser action |
 | Kit form | Form `9616629` accepts a live seed signup | Pending Greg test email | Avoid duplicate junk records |
 | Kit tag | Form/automation applies `gencreator-plan-generated` | Pending Kit admin confirmation | Launch blocker for segmented follow-up |
-| Analytics | GA4 events fire for plan generation, email capture, affiliate click, mission click, print | Pending spot check | No PII in event payloads |
+| Analytics | GA4 events fire for form start, plan generation, email capture, affiliate click, mission click, print | Source verified; deployed proof pending | All six no-PII event calls are wired. Live interaction generated a plan without runtime errors, but this browser session could not observe GA collection. A tested `dataLayer` fallback was added for Astro hosts where `window.gtag` is not exposed; verify after OGF deploy in GA4 DebugView/Realtime |
 | Affiliate disclosure | FTC disclosure visible near outbound database links | Visible; sign-off pending | Disclosure rendered on the generated plan; exact review queue below. Monetized activation still blocked |
 | Affiliate links | Free/direct links work; CJ monetized links remain blocked | Partially ready | Requires CRO approvals/ad IDs |
 | Accessibility | GenCreator UI remains WCAG 2.1 AA clean | Previously passed; no UI change | Sprint 8 evidence update changed documentation only |
@@ -61,6 +61,7 @@ The send-ready beta packet lives in `docs/BETA_TEST_PACKET.md`.
 2. Live Kit seed signup has not been run.
 3. Beta/user feedback has not been collected after the Gate 1 validation waiver.
 4. CJ affiliate activation is blocked on CRO approvals and advertiser/ad/link IDs.
+5. The analytics fallback needs OGF deployment and GA4 DebugView/Realtime confirmation before event delivery is treated as proven.
 
 ## Scope Guardrail
 
