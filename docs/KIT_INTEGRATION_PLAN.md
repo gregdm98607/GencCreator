@@ -1,7 +1,7 @@
 # GenCreator Kit Integration Plan
 
 > **Status:** Implemented with dedicated Kit form `9616629`
-> **Last updated:** 2026-07-21
+> **Last updated:** 2026-07-30
 
 ## Decision
 
@@ -27,22 +27,24 @@ Still confirm in Kit:
 |---|---|
 | Tag `gencreator-plan-generated` is applied by form/automation | Ensures GenCreator opt-ins are segmented correctly |
 | Confirmation of follow-up automation | Current static pattern can subscribe/tag; plan-email delivery requires Kit automation or a server-side email provider |
-| Seed test email | Verifies the form accepts a live subscription before public launch |
+| Seed test email: `greg@operationgrannyfiles.com` | Verifies the form accepts a live subscription before public launch |
 
 ## Live Operational Check
 
-2026-06-27 deployment check:
+Completed 2026-07-30 (PDT):
 
-- OGF PR #3 is live; both `https://www.operationgrannyfiles.com/research-planner/` and `https://www.operationgrannyfiles.com/gencreator/` return 200.
-- The live sitemap index points to `https://operationgrannyfiles.com/sitemap-0.xml`, which lists both planner routes.
-- Seed signup has **not** been run yet. Run only one live seed after Greg confirms the test email, to avoid duplicate junk records.
-- Kit admin still needs to confirm form `9616629` applies tag `gencreator-plan-generated`.
+- Kit form `9616629` is the active **GenCreator Plan form**.
+- The active **GenCreator Plan Capture** Visual Automation is configured as form completion → `gencreator-plan-generated`.
+- Exactly one production seed was submitted at approximately **23:23 PDT** using `greg@operationgrannyfiles.com`.
+- The live planner returned its success state. Kit created subscriber `4231946280` and delivered the confirmation message.
+- The confirmation link completed successfully. Kit shows the subscriber as **Confirmed**, sourced from the GenCreator form, tagged `gencreator-plan-generated`, and enrolled in **GenCreator Plan Capture**.
+- No second seed was submitted.
 
 Sprint 8 operational decision:
 
-- Do not run more than one live seed signup.
-- Do not run the seed signup until Greg confirms the exact test email.
-- Treat Kit as launch-blocked until both the tag confirmation and seed result are recorded.
+- The one-seed limit is exhausted; do not resubmit the production form for testing.
+- Kit capture, confirmation, tag, and automation proof all pass.
+- `gencreator_email_captured` is source/unit verified and the production success handler executed during the seed, but its GA4 receipt occurred before the host event bridge was repaired and did not appear in Realtime. Close that analytics-only evidence gap without another Kit submission, or record a Chairman exception.
 
 ## Implementation Shape
 

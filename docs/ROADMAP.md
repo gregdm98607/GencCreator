@@ -86,7 +86,7 @@
 
 **Sprint 8 focus:**
 - Kit operational proof: confirm tag `gencreator-plan-generated` and run one live seed signup after Greg confirms test email.
-- Beta proof: packet ready in `docs/BETA_TEST_PACKET.md`; send it and collect 5-10 responses or record the Chairman-approved equivalent.
+- Acceptance proof: Greg selected the fixed three-scenario Chairman walkthrough as the pre-Gate-2 substitute for external beta; external-user feedback moves to post-launch monitoring.
 - Launch-readiness evidence: maintain `docs/LAUNCH_READINESS_CHECKLIST.md` for route, sitemap, planner flow, print/save, analytics, affiliate disclosure, and approval status.
 - Validation fixes: apply only clear beta-identified P0/P1 issues inside locked MVP scope.
 
@@ -97,11 +97,11 @@
 - Knowledge base enrichment: goal-specific rationales, record-specific tips; Mountain-West depth (validation refinement list)
 - Error states + empty states polished
 - Content audit: tone, copy (light Granny voice), FTC disclosure vs. CRO framework (CPO/CRO review)
-- 5-10 beta testers from OGF list, feedback loop, 2 iterations
+- Chairman walkthrough across sparse-beginner, existing-research, and immigration scenarios; only P0/P1 fixes enter M3
 
 > **Paid tier ("GenCreator Plus", $19.99/mo) is NOT in M3.** Deferred to the Q3 paid-tier corridor (CD-2026-016), gated on the standalone decision + Chairman pricing approval. MVP/beta launches **affiliate-only**.
 
-**Exit criteria:** No P0/P1 bugs from beta. Plan quality rated 4+/5 average by beta testers.
+**Exit criteria:** No unresolved P0/P1 issues. Every Chairman walkthrough scenario scores at least 4/5. Kit and GA4 production proof are recorded.
 
 ---
 
@@ -113,7 +113,7 @@
 - Launch blog post on OGF
 - Social announcement (Substack, any social channels)
 - Email to existing OGF list
-- Affiliate tracking dashboard confirmed working
+- Direct-link click tracking confirmed working; CJ monetization may activate later
 - Conversion metrics baseline captured day 1
 
 **Gate 2 approval (Chairman):** Working MVP + beta results + launch plan + revenue projections reviewed → go/no-go.

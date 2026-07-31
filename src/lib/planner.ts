@@ -141,7 +141,7 @@ export function generatePlan(input: AncestorInput): ResearchPlan {
           ? {
               title: mission.title,
               level: mission.level as '101' | '201' | '301' | '401',
-              url: `https://operationgrannyfiles.com/missions/${mission.slug}`,
+              url: `https://operationgrannyfiles.com/blog/${mission.slug}/`,
             }
           : undefined,
         tips: buildTips(recordType, startYear, endYear),

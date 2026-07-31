@@ -98,6 +98,7 @@ describe('getOGFMission', () => {
     const mission = getOGFMission('census');
     expect(mission).not.toBeNull();
     expect(mission!.level).toBe('101');
+    expect(mission!.slug).toBe('mission-6');
   });
 
   it('returns null for dna_test (no mission)', () => {
@@ -112,6 +113,15 @@ describe('generatePlan', () => {
     expect(plan.ancestor.name).toBe('John Smith');
     expect(plan.steps.length).toBeGreaterThan(0);
     expect(plan.steps.length).toBeLessThanOrEqual(10);
+  });
+
+  it('links every referenced OGF mission to a published blog route', () => {
+    const plan = generatePlan(SAMPLE_INPUT);
+    for (const url of plan.ogfMissionsReferenced) {
+      expect(url).toMatch(
+        /^https:\/\/operationgrannyfiles\.com\/blog\/mission-\d+\/$/,
+      );
+    }
   });
 
   it('excludes records the user already has', () => {

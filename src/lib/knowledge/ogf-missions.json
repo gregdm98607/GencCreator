@@ -1,78 +1,78 @@
 {
   "$schema": "./schemas/ogf-missions.schema.json",
-  "_description": "Maps record types to OGF mission pages. Slugs are placeholders — update as OGF content is published.",
+  "_description": "Maps record types to published OGF mission posts under /blog/{slug}/.",
   "missions": [
     {
       "recordType": "census",
-      "title": "Reading the Census Like a Pro",
+      "title": "Count Me In — Census Records",
       "level": "101",
-      "slug": "mission-census-basics"
+      "slug": "mission-6"
     },
     {
       "recordType": "birth_record",
-      "title": "Finding Birth Records State by State",
-      "level": "201",
-      "slug": "mission-birth-records"
+      "title": "Born, Wed, Dead — Vital Records That Map a Life",
+      "level": "101",
+      "slug": "mission-7"
     },
     {
       "recordType": "death_record",
-      "title": "What Death Records Reveal",
-      "level": "201",
-      "slug": "mission-death-records"
+      "title": "Born, Wed, Dead — Vital Records That Map a Life",
+      "level": "101",
+      "slug": "mission-7"
     },
     {
       "recordType": "marriage_record",
-      "title": "Tracking Down Marriage Records",
-      "level": "201",
-      "slug": "mission-marriage-records"
+      "title": "Born, Wed, Dead — Vital Records That Map a Life",
+      "level": "101",
+      "slug": "mission-7"
     },
     {
       "recordType": "military",
-      "title": "Military Records Field Guide",
+      "title": "Reporting for Duty — Military Records and Your Ancestor's Service File",
       "level": "201",
-      "slug": "mission-military-records"
+      "slug": "mission-14"
     },
     {
       "recordType": "immigration",
-      "title": "Immigration Records: Following the Journey",
+      "title": "The Paper Trail Across the Water",
       "level": "201",
-      "slug": "mission-immigration-records"
+      "slug": "mission-13"
     },
     {
       "recordType": "naturalization",
-      "title": "Naturalization Papers Decoded",
-      "level": "301",
-      "slug": "mission-naturalization"
+      "title": "The Paper Trail Across the Water",
+      "level": "201",
+      "slug": "mission-13"
     },
     {
       "recordType": "land_deed",
-      "title": "Land Records and Property Deeds",
-      "level": "301",
-      "slug": "mission-land-records"
+      "title": "Staking Your Claim — Land Records and the Dirt Your Ancestors Stood On",
+      "level": "201",
+      "slug": "mission-16"
     },
     {
       "recordType": "probate",
-      "title": "Probate Records: Wills, Estates & Guardianships",
-      "level": "301",
-      "slug": "mission-probate-records"
+      "title": "The Courthouse Files — Court Records Beyond Probate",
+      "level": "201",
+      "slug": "mission-17"
     },
     {
       "recordType": "newspaper",
-      "title": "Mining Historical Newspapers",
-      "level": "201",
-      "slug": "mission-newspapers"
+      "title": "Extra! Extra! — Newspapers That Bring Your Ancestors to Life",
+      "level": "101",
+      "slug": "mission-8"
     },
     {
       "recordType": "church_record",
-      "title": "Church and Parish Records",
-      "level": "301",
-      "slug": "mission-church-records"
+      "title": "Baptisms, Burials, and the Books That Came Before",
+      "level": "201",
+      "slug": "mission-12"
     },
     {
       "recordType": "cemetery",
-      "title": "Cemetery Research Basics",
-      "level": "101",
-      "slug": "mission-cemetery-research"
+      "title": "Graveside Intelligence — Cemetery Records & What the Stones Tell",
+      "level": "301",
+      "slug": "mission-28"
     }
   ]
 }

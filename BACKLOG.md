@@ -28,7 +28,7 @@
 | P0-11 | Enrich `buildTips()` — record-specific tips | S | CTO | ✅ **DONE** — enriched and tested |
 | P0-12 | `/research-planner` route alias/redirect | S | CTO+CPO | ✅ Implemented and deployed in OGF PR #3; live checks on 2026-06-27 returned 200 for `/research-planner/` and `/gencreator/`, and `sitemap-0.xml` includes both. |
 | P0-13 | Kit operational proof | S | CTO+CRO/Greg | 🔄 Pulled into Sprint 8 — confirm tag `gencreator-plan-generated` on form `9616629`, then run one live seed signup after Greg confirms the test email |
-| P0-14 | Beta feedback proof after waiver | M | CPO/Greg | 🔄 Pulled into Sprint 8 — beta packet ready in `docs/BETA_TEST_PACKET.md`; collect 5-10 lightweight responses or record Chairman-approved equivalent before Gate 2 |
+| P0-14 | Acceptance proof after waiver | M | CPO/Greg | 🔄 Greg selected a fixed three-scenario Chairman walkthrough for Gate 2; external-user beta moves to post-launch monitoring |
 
 ## P1 — High Value, Post-MVP
 
