@@ -1,14 +1,14 @@
 # GenCreator Launch Readiness Checklist
 
-> **Status:** Started for Sprint 8
-> **Last updated:** 2026-07-30
+> **Status:** **Gate 2 GO — complete**
+> **Last updated:** 2026-07-31
 > **Purpose:** Gather Gate 2 evidence for the OGF-embedded MVP launch candidate.
 
 ## Gate 2 Posture
 
 GenCreator is deployed as an OGF-embedded MVP. Gate 1 advanced by Chairman waiver, so Gate 2 needs extra care around plan-quality evidence and live funnel proof.
 
-Current recommendation: **HOLD** until CPO/CRO sign-offs are recorded and the remaining GA4 email-event evidence gap is accepted or closed without a second Kit submission. Chairman acceptance is complete.
+Final disposition: **GO**. Chairman acceptance, CPO/CRO sign-offs, and the GA4 email-event evidence exception are all recorded as accepted.
 
 ## Evidence Checklist
 
@@ -20,17 +20,17 @@ Current recommendation: **HOLD** until CPO/CRO sign-offs are recorded and the re
 | Print/save | Print Plan control works on generated plan | Verified 2026-07-22 | Primary route control was visible, enabled, and executed without page error/navigation; alias exposed the same enabled control. OS print-dialog completion remains a user/browser action |
 | Kit form | Form `9616629` accepts a live seed signup | Verified 2026-07-30 23:23 PDT | Exactly one seed submitted to `greg@operationgrannyfiles.com`; success response, delivered confirmation, confirmed subscriber, and form attribution verified |
 | Kit tag | Form/automation applies `gencreator-plan-generated` | Verified 2026-07-30 | Subscriber `4231946280` shows the tag and “GenCreator Plan Capture” membership after processing |
-| Analytics | GA4 events fire for form start, plan generation, email capture, database click, mission click, print | 5/6 Realtime; source coverage 6/6 | OGF PR #5 repaired the host bridge. Realtime proves form start, plan generation, database click, mission click, and print. Email success ran before the repair; its event is source/unit verified but not present in Realtime. Do not submit a second seed |
-| Affiliate disclosure | FTC disclosure visible near outbound database links | Visible; sign-off pending | Disclosure rendered on the generated plan; exact review queue below. Monetized activation still blocked |
+| Analytics | GA4 events fire for form start, plan generation, email capture, database click, mission click, print | Accepted for Gate 2 | Five events are proven in Realtime and all six in source/unit coverage. Chairman accepted the email-event evidence exception; do not submit a second seed |
+| Affiliate disclosure | FTC disclosure visible near outbound database links | **CRO sign-off received** | Disclosure rendered on the generated plan; paper sign-off reported filed. Monetized activation remains deferred |
 | Affiliate links | Free/direct links work; CJ monetized links remain blocked | Launch policy approved | Chairman allows launch on direct/free links; pre-CJ affiliate revenue forecast is $0 |
 | Accessibility | GenCreator UI remains WCAG 2.1 AA clean | Verified 2026-07-30 | Scoped axe 4.12.1 production scan: 0 violations, 0 incomplete, 16 passes; Lighthouse deductions are shared-footer-only |
 | Performance | Lighthouse remains 90+ target | Verified 2026-07-30 | After OGF PR #7: production mobile Lighthouse 90 / 92 / 100 / 100; FCP/LCP 2.7s, TBT 0, CLS 0 |
 | Acceptance evidence | Three-scenario Chairman walkthrough | **ACCEPTED 2026-07-31** | All objective checks pass. Greg scored the scenarios 5/5, 5/5, and 4/5, selected ACCEPT, and acknowledged external-user validation as a post-launch risk. Mission-link P1 was fixed through OGF PR #6 and re-tested live |
-| Gate approval | Greg approves Dev→Launch | Pending | Gate 2 authority is Chairman |
+| Gate approval | Greg approves Dev→Launch | **GO — 2026-07-31** | Launch execution authorized; see `docs/LAUNCH_SCHEDULE.md` |
 
 ## Copy / FTC Review Queue
 
-No copy change is proposed in this evidence pass. Before Gate 2, request sign-off on:
+No copy change is proposed in this evidence pass. CPO/CRO paper sign-offs were reported received and filed on 2026-07-31; the reviewed surfaces are retained below for traceability:
 
 | Owner | Source | Review question |
 |---|---|---|
@@ -57,9 +57,7 @@ The pre-Gate-2 scorecard lives in `docs/CHAIRMAN_ACCEPTANCE_WALKTHROUGH.md`. The
 
 ## Current Blockers
 
-1. CPO/CRO copy, consent, and FTC sign-offs remain pending.
-2. `gencreator_email_captured` lacks GA4 Realtime receipt after the host repair; the one-seed limit prevents an ordinary replay.
-3. CJ activation is deferred pending CRO approvals and advertiser/ad/link IDs; it is not a Gate 2 blocker.
+None for MVP launch. CJ activation remains deferred pending advertiser/ad/link IDs and is not a launch blocker.
 
 ## Scope Guardrail
 

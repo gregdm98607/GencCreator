@@ -1,7 +1,7 @@
 # GenCreator Backlog
 
 > **Purpose:** Prioritized list of work not yet committed to a sprint. Anything scope-creepy or "nice-to-have" lives here, not in SPRINT.md.
-> **Last updated:** 2026-07-21
+> **Last updated:** 2026-07-31
 > **Sizing:** XS (<1hr) · S (1–4hr) · M (half-day to day) · L (multi-day) · XL (week+)
 
 **Rules:**
@@ -27,8 +27,8 @@
 | P0-10 | Enrich `buildRationale()` — goal-specific prose | S | CTO | ✅ **DONE** — enriched and tested |
 | P0-11 | Enrich `buildTips()` — record-specific tips | S | CTO | ✅ **DONE** — enriched and tested |
 | P0-12 | `/research-planner` route alias/redirect | S | CTO+CPO | ✅ Implemented and deployed in OGF PR #3; live checks on 2026-06-27 returned 200 for `/research-planner/` and `/gencreator/`, and `sitemap-0.xml` includes both. |
-| P0-13 | Kit operational proof | S | CTO+CRO/Greg | 🔄 Pulled into Sprint 8 — confirm tag `gencreator-plan-generated` on form `9616629`, then run one live seed signup after Greg confirms the test email |
-| P0-14 | Acceptance proof after waiver | M | CPO/Greg | 🔄 Greg selected a fixed three-scenario Chairman walkthrough for Gate 2; external-user beta moves to post-launch monitoring |
+| P0-13 | Kit operational proof | S | CTO+CRO/Greg | ✅ **DONE** — exactly one confirmed/tagged seed and active automation membership verified |
+| P0-14 | Acceptance proof after waiver | M | CPO/Greg | ✅ **DONE** — scenarios scored 5/5, 5/5, 4/5; Chairman ACCEPT; external-user validation tracked post-launch |
 
 ## P1 — High Value, Post-MVP
 
@@ -42,7 +42,7 @@
 | P1-6 | Error telemetry (Sentry or equivalent) | S | Production readiness |
 | P1-7 | Rate limiting on email endpoint | S | Abuse prevention |
 | P1-8 | Copy polish pass (CPO) | S | Tone, CTAs, disclaimers |
-| P1-9 | Launch-readiness checklist / go-live packet | S | 🔄 Pulled into Sprint 8 — `docs/LAUNCH_READINESS_CHECKLIST.md` gathers route, Kit, affiliate, QA, beta, copy, and owner sign-offs before Gate 2 |
+| P1-9 | Launch-readiness checklist / go-live packet | S | ✅ **DONE** — Gate 2 packet closed with final GO on 2026-07-31 |
 
 ## P2 — Feature Expansion
 

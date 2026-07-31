@@ -1,7 +1,7 @@
 # GenCreator Roadmap
 
 > **Owner:** CTO (technical) / CPO (product) / CEO (gate approvals)
-> **Last updated:** 2026-07-21
+> **Last updated:** 2026-07-31
 > **Governance:** See [GOVERNANCE.md](GOVERNANCE.md) for gate approvers and escalation paths.
 
 ---
@@ -12,8 +12,8 @@
 |-----------|------|----------|--------|--------|
 | M1 — Feasibility Prototype | Internal | CTO | ~~2026-04-30~~ → 2026-06-03 | 🟢 **Complete** — all exit criteria met (Sprint 6 closed 2026-06-03); CTO feasibility signed off 2026-06-06; live `/gencreator/` page verified on operationgrannyfiles.com 2026-06-27 |
 | M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO / Chairman waiver | ~~2026-05-30~~ → ~~2026-06-21~~ → 2026-06-27 | 🟢 **Advanced by Chairman waiver (Option B)**. Validation B1=0, but Greg selected Option B on 2026-06-27 to waive behavioral validation and proceed. |
-| M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → ~~2026-07-31~~ → 2026-08-04 | 🟡 Sprint 8 active: launch-readiness evidence, Kit operational proof, and beta feedback. CI, live `/research-planner` alias, and Kit capture implementation are done; CJ is prepared but blocked on affiliate details. |
-| M4 — Launch on OGF | Gate 2 (Dev→Launch) | Chairman (Greg) | Q3 2026 | ⬜ Not started |
+| M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → ~~2026-07-31~~ → 2026-07-31 | 🟢 **Complete** — Sprint 8 evidence, Kit proof, acceptance, QA, and sign-offs closed |
+| M4 — Launch on OGF | Gate 2 (Dev→Launch) | Chairman (Greg) | 2026-08-04 | 🟢 **GO approved 2026-07-31; launch scheduled** |
 | M5 — 90-Day Evaluation | Gate 3 (Post-launch) | Chairman | Q4 2026 | ⬜ Not started |
 
 > **🔄 Schedule re-baseline (2026-05-31):** Sprint 5 lapsed with no activity for 39 days; the M1 polish and M2/Gate 1 deadlines (2026-05-30) passed unmet. Targets above are reset to reflect a realistic restart from today. **CTO-owned dates** (M1, Sprint 6) are committed; **product/gate-owned dates** (M2, M3) are *proposed* pending CPO/CEO/CRO confirmation. M4/M5 (Q3/Q4 2026) are unchanged but now carry compression risk. See [SPRINT.md](../SPRINT.md) + progress.md Session 6.
@@ -117,6 +117,8 @@
 - Conversion metrics baseline captured day 1
 
 **Gate 2 approval (Chairman):** Working MVP + beta results + launch plan + revenue projections reviewed → go/no-go.
+
+**Disposition:** **GO — 2026-07-31.** CPO/CRO sign-offs received/filed; GA4 email-event evidence exception accepted; external validation tracked post-launch. Launch schedule: `docs/LAUNCH_SCHEDULE.md`.
 
 **Success metrics (first 30 days):**
 - N plans generated (baseline TBD)
