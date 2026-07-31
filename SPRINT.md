@@ -34,7 +34,7 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 - [x] **[S8-6] Source/host parity check** — verified 2026-07-22: source and OGF logic/data/CSS match after line-ending normalization; component diffs are limited to intentional OGF-relative import paths.
 - [x] **[S8-7] Analytics delivery hardening** — OGF PR #5 exposed the GA bridge globally; PR #7 preserved queued delivery while deferring third-party cost. Realtime proves five live-UI events and post-performance queued delivery. The one pre-fix email event remains a documented evidence exception, not a source-wiring defect.
 - [x] **[S8-8] Source merge + CI proof** — GenCreator PR #1 passed 38 tests and typecheck in GitHub Actions and merged to `main` on 2026-07-30. The workflow trigger was corrected from stale `master` to the actual default branch, `main`.
-- [ ] **[S8-9] Chairman walkthrough** — execute and score the three fixed scenarios in `docs/CHAIRMAN_ACCEPTANCE_WALKTHROUGH.md`; require every scenario ≥4/5 and no unresolved P0/P1 issue.
+- [x] **[S8-9] Chairman walkthrough evidence** — all three scenarios pass the objective checks and Greg scored them 5/5, 5/5, and 4/5. No unresolved P0/P1 issue remains; formal Gate 2 disposition is tracked separately.
 - [ ] **[S8-10] Gate 2 packet** — complete `docs/GATE2_PACKET.md` with Kit/GA4 proof, walkthrough disposition, copy/FTC reviews, launch plan, and honest pre-CJ revenue posture.
 
 ## Conditional / Blocked

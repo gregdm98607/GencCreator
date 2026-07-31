@@ -1,6 +1,6 @@
 # GenCreator Chairman Acceptance Walkthrough
 
-> **Status:** Technical walkthrough complete; Chairman ratings/disposition pending
+> **Status:** Walkthrough and usefulness threshold passed; Chairman disposition pending
 > **Decision owner:** Greg Maxfield, Chairman
 > **Target:** 2026-08-01
 > **Purpose:** Chairman-approved substitute for the 5–10-person pre-launch beta.
@@ -63,9 +63,9 @@ Expected review: passenger, naturalization, and origin-oriented sources are prio
 
 | Scenario | Plan generated | Clear first action | Relevant links work | Found records excluded | Print/save works | Usefulness 1–5 | P0/P1 issue |
 |---|---|---|---|---|---|---:|---|
-| 1 — Sparse beginner | Pass | Pass — birth record with parentage rationale | Pass after fix — database links opened; published Mission 7 returns 200 | N/A | Pass — no navigation/error | | None unresolved |
-| 2 — Confirm identity | Pass | Pass — military evidence, then naturalization/directories | Pass after fix — direct/UTM links present; all mapped OGF missions return 200 | Pass — census/birth/death/marriage excluded | Pass — no navigation/error | | None unresolved |
-| 3 — Immigration | Pass | Pass — passenger manifests, then naturalization | Pass after fix — direct/UTM links present; Missions 13/14/12/28 return 200 | Pass — census/death excluded | Pass — no navigation/error | | None unresolved |
+| 1 — Sparse beginner | Pass | Pass — birth record with parentage rationale | Pass after fix — database links opened; published Mission 7 returns 200 | N/A | Pass — no navigation/error | **5/5** | None unresolved |
+| 2 — Confirm identity | Pass | Pass — military evidence, then naturalization/directories | Pass after fix — direct/UTM links present; all mapped OGF missions return 200 | Pass — census/birth/death/marriage excluded | Pass — no navigation/error | **5/5** | None unresolved |
+| 3 — Immigration | Pass | Pass — passenger manifests, then naturalization | Pass after fix — direct/UTM links present; Missions 13/14/12/28 return 200 | Pass — census/death excluded | Pass — no navigation/error | **4/5** | None unresolved |
 
 ## Chairman Disposition
 
@@ -81,4 +81,6 @@ Residual-risk acknowledgement: this walkthrough is not external-user validation.
 
 **Notes / required fixes:**
 
-Technical execution note (2026-07-30): all scenarios generated without runtime/page errors and met the mechanical acceptance criteria. The first outbound sweep found placeholder OGF mission URLs returning 404; OGF PR #6 mapped all 12 record types to published posts, passed CI, deployed, and was re-tested live. No unresolved P0/P1 issue remains from the walkthrough. Usefulness scores and the final ACCEPT / ACCEPT WITH FIXES / HOLD selection are intentionally left for the Chairman.
+Technical execution note (2026-07-30): all scenarios generated without runtime/page errors and met the mechanical acceptance criteria. The first outbound sweep found placeholder OGF mission URLs returning 404; OGF PR #6 mapped all 12 record types to published posts, passed CI, deployed, and was re-tested live. No unresolved P0/P1 issue remains from the walkthrough.
+
+Chairman score update (2026-07-31): Greg rated the scenarios **5/5, 5/5, and 4/5**. Every scenario meets the required ≥4/5 usefulness threshold. The final ACCEPT / ACCEPT WITH FIXES / HOLD selection remains pending.
