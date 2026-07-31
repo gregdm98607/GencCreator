@@ -31,6 +31,25 @@ describe('track', () => {
     expect(gtag).toHaveBeenCalledWith('event', 'gencreator_form_started', {});
   });
 
+  it('pushes to dataLayer when Astro does not expose gtag on window', () => {
+    const dataLayer: unknown[] = [];
+    vi.stubGlobal('window', { dataLayer });
+    track('gencreator_plan_generated', {
+      research_goal: 'find_parents',
+      step_count: 5,
+    });
+    expect(dataLayer).toEqual([
+      [
+        'event',
+        'gencreator_plan_generated',
+        {
+          research_goal: 'find_parents',
+          step_count: 5,
+        },
+      ],
+    ]);
+  });
+
   it('swallows errors thrown by gtag so the UI never breaks', () => {
     const gtag = vi.fn(() => {
       throw new Error('blocked by extension');

@@ -21,16 +21,26 @@ type GtagFn = (
   params?: Record<string, unknown>,
 ) => void;
 
-/** Fire a GA4 custom event. No-op when gtag is unavailable. */
+type AnalyticsWindow = {
+  gtag?: GtagFn;
+  dataLayer?: unknown[];
+};
+
+/** Fire a GA4 custom event. No-op when no GA runtime is available. */
 export function track(
   event: GenCreatorEvent,
   params: Record<string, unknown> = {},
 ): void {
   if (typeof window === 'undefined') return;
-  const gtag = (window as unknown as { gtag?: GtagFn }).gtag;
-  if (typeof gtag !== 'function') return;
+  const analyticsWindow = window as unknown as AnalyticsWindow;
   try {
-    gtag('event', event, params);
+    if (typeof analyticsWindow.gtag === 'function') {
+      analyticsWindow.gtag('event', event, params);
+      return;
+    }
+    if (Array.isArray(analyticsWindow.dataLayer)) {
+      analyticsWindow.dataLayer.push(['event', event, params]);
+    }
   } catch {
     // Analytics must never break the research planner.
   }

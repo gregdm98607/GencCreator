@@ -1,7 +1,7 @@
 # GenCreator Roadmap
 
 > **Owner:** CTO (technical) / CPO (product) / CEO (gate approvals)
-> **Last updated:** 2026-06-27
+> **Last updated:** 2026-07-21
 > **Governance:** See [GOVERNANCE.md](GOVERNANCE.md) for gate approvers and escalation paths.
 
 ---
@@ -12,7 +12,7 @@
 |-----------|------|----------|--------|--------|
 | M1 — Feasibility Prototype | Internal | CTO | ~~2026-04-30~~ → 2026-06-03 | 🟢 **Complete** — all exit criteria met (Sprint 6 closed 2026-06-03); CTO feasibility signed off 2026-06-06; live `/gencreator/` page verified on operationgrannyfiles.com 2026-06-27 |
 | M2 — MVP Spec Finalized + Gate 1 | Gate 1 (Validation→Dev) | SSM CEO / Chairman waiver | ~~2026-05-30~~ → ~~2026-06-21~~ → 2026-06-27 | 🟢 **Advanced by Chairman waiver (Option B)**. Validation B1=0, but Greg selected Option B on 2026-06-27 to waive behavioral validation and proceed. |
-| M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → 2026-07-31 | 🟡 Started via Sprint 7 Development kickoff. CI, live `/research-planner` alias, and Kit capture are done; CJ is prepared but blocked on affiliate details; beta feedback still needed later. |
+| M3 — MVP Hardening + Beta | Internal | CTO + CPO | ~~2026-06-30~~ → ~~2026-07-31~~ → 2026-08-04 | 🟡 Sprint 8 active: launch-readiness evidence, Kit operational proof, and beta feedback. CI, live `/research-planner` alias, and Kit capture implementation are done; CJ is prepared but blocked on affiliate details. |
 | M4 — Launch on OGF | Gate 2 (Dev→Launch) | Chairman (Greg) | Q3 2026 | ⬜ Not started |
 | M5 — 90-Day Evaluation | Gate 3 (Post-launch) | Chairman | Q4 2026 | ⬜ Not started |
 
@@ -78,12 +78,17 @@
 
 **Goal:** Ship-quality MVP with real affiliate links, real email capture, real analytics, validated with beta users.
 
-**Sprint 7 starting scope:**
+**Sprint 7 completed scope:**
 - P0-3 Kit integration: capture implemented with dedicated Kit form `9616629`; exact generated-plan email delivery deferred/automation-dependent.
 - Route alias: OGF PR #3 is deployed; `/research-planner/` and `/gencreator/` both return 200 and the live sitemap includes both.
-- Validation fixes: apply CPO's ranked list from tester feedback; prioritize plan clarity, missing recommendations, and Mountain-West knowledge gaps.
 - P0-4 affiliate builder: CJ deep-link strategy prepared, activation waits on CRO approvals/ad IDs.
 - CI: OGF host already has a build-only GitHub Action on `master`; GenCreator source CI now runs `npm test` and `npm run typecheck` on Node 24.
+
+**Sprint 8 focus:**
+- Kit operational proof: confirm tag `gencreator-plan-generated` and run one live seed signup after Greg confirms test email.
+- Beta proof: packet ready in `docs/BETA_TEST_PACKET.md`; send it and collect 5-10 responses or record the Chairman-approved equivalent.
+- Launch-readiness evidence: maintain `docs/LAUNCH_READINESS_CHECKLIST.md` for route, sitemap, planner flow, print/save, analytics, affiliate disclosure, and approval status.
+- Validation fixes: apply only clear beta-identified P0/P1 issues inside locked MVP scope.
 
 **Scope:**
 - Affiliate links: **CJ deep-link builder** (Ancestry/MyHeritage/FindMyPast via Commission Junction, PID 7928154) + keep Amazon `tag` model — NOT a simple ID swap (CRO model; findings.md Finding 14). Gated on CRO approvals (overdue). Telemetry prereq (CD-2026-006) likely already met by GA4 `gencreator_affiliate_click`.
