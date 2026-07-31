@@ -10,13 +10,15 @@ GenCreator helps beginner and intermediate genealogists create a prioritized res
 
 ## Status
 
-**Phase 1 — Conception & Design** (April-May 2026)
+**Gate 2 GO — Launch approved** (July 31, 2026)
 
-This project is in the product definition and specification phase. See `docs/` for:
+The OGF-embedded MVP is live and approved for public launch on **August 4, 2026**. See `docs/` for:
 - [Product Brief](docs/PRODUCT_BRIEF.md) — vision, target user, competitive landscape
 - [MVP Specification](docs/MVP_SPEC_DRAFT.md) — features, user stories, data model
 - [Architecture](docs/ARCHITECTURE.md) — technical decisions and stack
 - [Governance](docs/GOVERNANCE.md) — oversight and decision authority
+- [Gate 2 Packet](docs/GATE2_PACKET.md) — evidence and final GO disposition
+- [Launch Schedule](docs/LAUNCH_SCHEDULE.md) — August 4 communications and analytics checkpoints
 
 ## Technology
 

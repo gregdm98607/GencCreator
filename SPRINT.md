@@ -3,7 +3,8 @@
 > **Sprint #:** 8
 > **Window:** 2026-07-21 → 2026-08-04
 > **Sprint goal:** Turn the deployed MVP into a Gate 2-ready launch candidate by proving the live capture funnel, collecting beta feedback, and assembling launch-readiness evidence without expanding MVP scope.
-> **Last updated:** 2026-07-30
+> **Last updated:** 2026-07-31
+> **Disposition:** **COMPLETE — Gate 2 GO recorded 2026-07-31**
 
 ---
 
@@ -35,7 +36,7 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 - [x] **[S8-7] Analytics delivery hardening** — OGF PR #5 exposed the GA bridge globally; PR #7 preserved queued delivery while deferring third-party cost. Realtime proves five live-UI events and post-performance queued delivery. The one pre-fix email event remains a documented evidence exception, not a source-wiring defect.
 - [x] **[S8-8] Source merge + CI proof** — GenCreator PR #1 passed 38 tests and typecheck in GitHub Actions and merged to `main` on 2026-07-30. The workflow trigger was corrected from stale `master` to the actual default branch, `main`.
 - [x] **[S8-9] Chairman walkthrough evidence** — all three scenarios pass the objective checks and Greg scored them 5/5, 5/5, and 4/5. No unresolved P0/P1 issue remains; formal Gate 2 disposition is tracked separately.
-- [ ] **[S8-10] Gate 2 packet** — complete `docs/GATE2_PACKET.md` with Kit/GA4 proof, walkthrough disposition, copy/FTC reviews, launch plan, and honest pre-CJ revenue posture.
+- [x] **[S8-10] Gate 2 packet** — complete with Kit/GA4 proof, Chairman acceptance, CPO/CRO sign-offs, approved launch schedule, $0 pre-CJ revenue posture, and final GO.
 
 ## Conditional / Blocked
 
@@ -63,6 +64,7 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 | 2026-07-22 | CTO | Live analytics smoke generated another 10-step plan with no runtime warnings/errors. The browser exposed the GA script but not a callable `window.gtag`, so the shared tracker was hardened with a tested `dataLayer` fallback and synced to OGF. GenCreator: 38 tests + typecheck pass; OGF: 43-page build pass. | Deploy OGF analytics fallback; verify events in GA4 DebugView/Realtime; confirm Kit tag/test email |
 | 2026-07-30 | Greg/CTO | Locked the Gate 2 path: Chairman walkthrough instead of external beta; launch with direct/free links while CJ is deferred; one Kit seed to `greg@operationgrannyfiles.com`. GenCreator PR #1 passed CI and merged to `main`; OGF PR #4 had already deployed the GA fallback. | Prove Kit + GA4, run the walkthrough, close sign-offs, assemble Gate 2 packet |
 | 2026-07-30 | CTO | Kit proof passed with exactly one confirmed/tagged seed. Three walkthrough scenarios passed mechanically. OGF PRs #5–#7 fixed the GA bridge, published mission links, and Lighthouse performance. Production QA: 90/92/100/100 and scoped axe 0/0. | Record Chairman ratings/disposition, CPO/CRO sign-offs, and the email-event evidence exception |
+| 2026-07-31 | Greg/Chairman | Accepted external-validation risk and GA4 email-event evidence exception; confirmed CPO/CRO sign-offs received/filed; issued final Gate 2 **GO**. | Execute the August 4 launch schedule and capture day-one baseline |
 
 ---
 
@@ -72,7 +74,7 @@ Sprint 7 finished the Development kickoff: Gate 1 waiver recorded, source CI add
 2. One live seed signup is completed and recorded, or explicitly deferred by Greg.
 3. Chairman walkthrough is completed with all three scenarios ≥4/5 and no unresolved P0/P1 issue.
 4. Live deployed smoke check is recorded for both planner routes.
-5. Launch-readiness checklist exists and shows current Gate 2 blockers.
+5. Launch-readiness checklist is closed with Gate 2 GO and no MVP launch blockers.
 6. No out-of-scope paid/account/LLM/standalone work is introduced.
 
 ---
