@@ -58,4 +58,4 @@ The first CLI attempt used an incompatible bundled ChromeDriver and was discarde
 
 ## Acceptance
 
-All three fixed Chairman scenarios pass the objective checks after the mission-link repair. Greg scored them **5/5, 5/5, and 4/5**, so the ≥4/5 usefulness requirement passes. Residual-risk acknowledgement, CPO/CRO sign-offs, and Chairman Gate 2 disposition remain human decisions.
+All three fixed Chairman scenarios pass the objective checks after the mission-link repair. Greg scored them **5/5, 5/5, and 4/5**, selected **ACCEPT**, and acknowledged external-user validation as a tracked post-launch risk. CPO/CRO sign-offs, the GA4 email-event evidence exception, and the final Development → Launch Gate 2 decision remain open.

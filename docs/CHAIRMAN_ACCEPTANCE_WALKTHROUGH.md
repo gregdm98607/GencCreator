@@ -1,6 +1,6 @@
 # GenCreator Chairman Acceptance Walkthrough
 
-> **Status:** Walkthrough and usefulness threshold passed; Chairman disposition pending
+> **Status:** **ACCEPTED** by Chairman on 2026-07-31
 > **Decision owner:** Greg Maxfield, Chairman
 > **Target:** 2026-08-01
 > **Purpose:** Chairman-approved substitute for the 5–10-person pre-launch beta.
@@ -69,18 +69,18 @@ Expected review: passenger, naturalization, and origin-oriented sources are prio
 
 ## Chairman Disposition
 
-- [ ] **ACCEPT** — all scenarios pass; proceed to Gate 2 with external-user validation tracked post-launch.
+- [x] **ACCEPT** — all scenarios pass; proceed to Gate 2 with external-user validation tracked post-launch.
 - [ ] **ACCEPT WITH FIXES** — list only P0/P1 fixes below and re-run affected scenarios.
 - [ ] **HOLD** — the planner is not launch-ready.
 
-Residual-risk acknowledgement: this walkthrough is not external-user validation. The Gate 1 B1=0 risk remains and will be monitored through post-launch feedback and production funnel metrics.
+Residual-risk acknowledgement: **accepted by the Chairman on 2026-07-31.** This walkthrough is not external-user validation. The Gate 1 B1=0 risk remains and will be monitored through post-launch feedback and production funnel metrics.
 
 **Chairman:** Greg Maxfield
 
-**Date:**
+**Date:** 2026-07-31
 
-**Notes / required fixes:**
+**Notes / required fixes:** All scenarios pass; proceed to Gate 2 with external-user validation tracked post-launch.
 
 Technical execution note (2026-07-30): all scenarios generated without runtime/page errors and met the mechanical acceptance criteria. The first outbound sweep found placeholder OGF mission URLs returning 404; OGF PR #6 mapped all 12 record types to published posts, passed CI, deployed, and was re-tested live. No unresolved P0/P1 issue remains from the walkthrough.
 
-Chairman score update (2026-07-31): Greg rated the scenarios **5/5, 5/5, and 4/5**. Every scenario meets the required ≥4/5 usefulness threshold. The final ACCEPT / ACCEPT WITH FIXES / HOLD selection remains pending.
+Chairman disposition (2026-07-31): Greg selected **ACCEPT**. Every scenario meets the required ≥4/5 usefulness threshold, and the external-user validation gap is acknowledged as a post-launch risk-control item.

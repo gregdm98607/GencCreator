@@ -8,7 +8,7 @@
 
 GenCreator is deployed as an OGF-embedded MVP. Gate 1 advanced by Chairman waiver, so Gate 2 needs extra care around plan-quality evidence and live funnel proof.
 
-Current recommendation: **HOLD** until the Chairman records a disposition, CPO/CRO sign-offs are recorded, and the remaining GA4 email-event evidence gap is accepted or closed without a second Kit submission.
+Current recommendation: **HOLD** until CPO/CRO sign-offs are recorded and the remaining GA4 email-event evidence gap is accepted or closed without a second Kit submission. Chairman acceptance is complete.
 
 ## Evidence Checklist
 
@@ -25,7 +25,7 @@ Current recommendation: **HOLD** until the Chairman records a disposition, CPO/C
 | Affiliate links | Free/direct links work; CJ monetized links remain blocked | Launch policy approved | Chairman allows launch on direct/free links; pre-CJ affiliate revenue forecast is $0 |
 | Accessibility | GenCreator UI remains WCAG 2.1 AA clean | Verified 2026-07-30 | Scoped axe 4.12.1 production scan: 0 violations, 0 incomplete, 16 passes; Lighthouse deductions are shared-footer-only |
 | Performance | Lighthouse remains 90+ target | Verified 2026-07-30 | After OGF PR #7: production mobile Lighthouse 90 / 92 / 100 / 100; FCP/LCP 2.7s, TBT 0, CLS 0 |
-| Acceptance evidence | Three-scenario Chairman walkthrough | Usefulness threshold passed; disposition pending | All objective checks pass. Greg scored the scenarios 5/5, 5/5, and 4/5. Mission-link P1 was fixed through OGF PR #6 and re-tested live |
+| Acceptance evidence | Three-scenario Chairman walkthrough | **ACCEPTED 2026-07-31** | All objective checks pass. Greg scored the scenarios 5/5, 5/5, and 4/5, selected ACCEPT, and acknowledged external-user validation as a post-launch risk. Mission-link P1 was fixed through OGF PR #6 and re-tested live |
 | Gate approval | Greg approves Dev→Launch | Pending | Gate 2 authority is Chairman |
 
 ## Copy / FTC Review Queue
@@ -57,10 +57,9 @@ The pre-Gate-2 scorecard lives in `docs/CHAIRMAN_ACCEPTANCE_WALKTHROUGH.md`. The
 
 ## Current Blockers
 
-1. Chairman residual-risk acknowledgement and explicit disposition remain pending; usefulness passed at 5/5, 5/5, and 4/5.
-2. CPO/CRO copy, consent, and FTC sign-offs remain pending.
-3. `gencreator_email_captured` lacks GA4 Realtime receipt after the host repair; the one-seed limit prevents an ordinary replay.
-4. CJ activation is deferred pending CRO approvals and advertiser/ad/link IDs; it is not a Gate 2 blocker.
+1. CPO/CRO copy, consent, and FTC sign-offs remain pending.
+2. `gencreator_email_captured` lacks GA4 Realtime receipt after the host repair; the one-seed limit prevents an ordinary replay.
+3. CJ activation is deferred pending CRO approvals and advertiser/ad/link IDs; it is not a Gate 2 blocker.
 
 ## Scope Guardrail
 
