@@ -58,4 +58,4 @@ The first CLI attempt used an incompatible bundled ChromeDriver and was discarde
 
 ## Acceptance
 
-All three fixed Chairman scenarios pass the objective checks after the mission-link repair. Usefulness ratings, residual-risk acknowledgement, CPO/CRO sign-offs, and Chairman Gate 2 disposition remain human decisions.
+All three fixed Chairman scenarios pass the objective checks after the mission-link repair. Greg scored them **5/5, 5/5, and 4/5**, so the ≥4/5 usefulness requirement passes. Residual-risk acknowledgement, CPO/CRO sign-offs, and Chairman Gate 2 disposition remain human decisions.
