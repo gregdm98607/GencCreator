@@ -85,7 +85,8 @@ Greg Maxfield — Chairman of the Board
 - **Approver:** Chairman (Greg Maxfield)
 - **Required artifacts:** Working MVP, beta test results, launch plan, revenue projections
 - **Timeline:** Target Q3 2026
-- **Criteria:** MVP functional and tested, positive beta feedback, affiliate programs active, launch plan approved
+- **Criteria:** MVP functional and tested, positive acceptance evidence, monetization status explicitly disclosed, launch plan approved
+- **Chairman exception (2026-07-30):** A scored three-scenario Chairman walkthrough replaces the 5–10-person pre-launch beta. External-user feedback moves to post-launch monitoring. Gate 2 may proceed with free/direct database links while CJ monetization remains deferred; the launch-period affiliate revenue forecast is $0 until activation.
 
 ### Gate 3: Post-Launch Evaluation — Standalone Product?
 - **Approver:** Chairman (Greg Maxfield) on CEO recommendation
