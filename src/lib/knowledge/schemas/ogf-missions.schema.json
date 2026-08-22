@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["missions"],
+  "properties": {
+    "missions": { "type": "array", "items": { "$ref": "#/$defs/mission" } }
+  },
+  "$defs": {
+    "mission": {
+      "type": "object",
+      "required": ["recordType", "title", "level", "slug"],
+      "properties": {
+        "recordType": { "type": "string" },
+        "title": { "type": "string", "minLength": 1 },
+        "level": { "enum": ["101", "201", "301", "401"] },
+        "slug": { "type": "string", "pattern": "^mission-[0-9]+$" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

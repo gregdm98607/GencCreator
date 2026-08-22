@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["records"],
+  "properties": {
+    "records": { "type": "array", "items": { "$ref": "#/$defs/record" } }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": ["recordType", "country", "startYear", "endYear"],
+      "properties": {
+        "recordType": { "type": "string" },
+        "country": { "type": "string", "minLength": 1 },
+        "startYear": { "type": "integer", "minimum": 1500, "maximum": 2100 },
+        "endYear": { "type": "integer", "minimum": 1500, "maximum": 2100 },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}
